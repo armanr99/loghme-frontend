@@ -1,0 +1,19 @@
+html {
+  height:100%;
+}
+
+body {
+  font-family: Vazir !important;
+  background-color: #F7FFF7 !important;
+  direction: rtl;
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
