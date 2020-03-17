@@ -17,3 +17,72 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.section-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2.2em;
+  font-weight: bold;
+  border-bottom: 3px solid #1A535C;
+  color: #1A535C;
+  margin-bottom: 10px;
+}
+
+.flex-wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.loghme-card {
+  width: 200px;
+  height: 230px;
+  margin: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
+}
+
+.loghme-button-style {
+  background-color: #ffe66d;
+  color: #484848;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 0.9em;
+}
+
+.loghme-button-style:hover {
+  text-decoration: none;
+}
+
+.loghme-button {
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+i::before {
+  margin-left: 0 !important;
+}
