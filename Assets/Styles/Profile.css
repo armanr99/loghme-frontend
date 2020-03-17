@@ -1,0 +1,130 @@
+@import "../Fonts/vazir-fonts/fonts.css";
+@import "General.css";
+@import "Header.css";
+@import "Footer.css";
+
+.profile-info-container {
+  background-color: #FF6B6B;
+  color: white;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-name {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.profile-name span {
+  font-weight: bold;
+  font-size: 1.6em;
+  padding-right: 10px;
+}
+
+.profile-name i::before {
+  font-size: 3em;
+}
+
+.profile-description-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.profile-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.description-container {
+  display: flex;
+  align-items: center;
+}
+
+.description-container > i {
+  padding-left: 10px;
+}
+
+@media (max-width: 575.98px) {
+  .profile-description-container, .profile-name {
+    justify-content: center;
+  }
+
+  .profile-info-container {
+    height: 210px;
+  }
+
+  .profile-description-container {
+    margin-top: 10px;
+  }
+}
+
+.profile-content {
+  margin-top: 100px;
+  height: 500px;
+  background-color: white;
+  border: 1px solid #979797;
+  border-radius: 30px;
+  position: relative;
+  padding-top: 80px;
+}
+
+.profile-tab {
+  display:none;
+}
+
+.radio {
+  display:none;
+}
+
+#credit-tab-select:checked ~ .credit-tab,
+#orders-tab-select:checked ~ .orders-tab {
+  display:block
+}
+
+#credit-tab-select:checked ~ .profile-options .credit-tab-label,
+#orders-tab-select:checked ~ .profile-options .orders-tab-label {
+  background-color: #FF6B6B;
+  font-weight: bold;
+  color: white;
+}
+
+.profile-options {
+  width: 60%;
+  height: 65px;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
+  overflow: hidden;
+}
+
+.profile-options label {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  margin: 0;
+}
+
+.vertical-dash {
+  height: 100%;
+  width: 0;
+  border-right: 2px dashed #979797;
+}
