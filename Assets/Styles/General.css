@@ -86,3 +86,17 @@ body {
 i::before {
   margin-left: 0 !important;
 }
+
+.loghme-input-text {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f3f3f3;
+}
+
+.loghme-input-text::placeholder {
+  text-align: right;
+}

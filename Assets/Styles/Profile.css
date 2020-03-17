@@ -66,12 +66,17 @@
 
 .profile-content {
   margin-top: 100px;
-  height: 500px;
   background-color: white;
   border: 1px solid #979797;
   border-radius: 30px;
   position: relative;
   padding-top: 80px;
+  padding-bottom: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  margin-bottom: 65px;
 }
 
 .profile-tab {
@@ -95,7 +100,7 @@
 }
 
 .profile-options {
-  width: 60%;
+  width: 70%;
   height: 65px;
   position: absolute;
   top: -30px;
@@ -105,7 +110,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.2em;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
@@ -127,4 +131,29 @@
   height: 100%;
   width: 0;
   border-right: 2px dashed #979797;
+}
+
+.credit-tab {
+  width: 70%;
+}
+
+.credit-tab input {
+  width: 100%;
+}
+
+.add-credit {
+  display: flex;
+  align-items: center;
+}
+
+.add-credit input[type="text"] {
+  border: 1px solid #a7a7a7;
+}
+
+.add-credit input[type="submit"] {
+  background-color: #4ECDC4;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #49a69f;
+  padding: 13.85px 20px;
 }
