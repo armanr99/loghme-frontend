@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
   .header-container {
     width: 100%;
   }
