@@ -159,3 +159,8 @@
 .restaurant-card-info a {
   width: 55%;
 }
+
+.home-search-form input[type="text"]::placeholder {
+  text-align: center;
+}
+
