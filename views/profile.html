@@ -1,182 +1,181 @@
 <!doctype html>
 <html lang="fa">
+    <head>
+        <title>حساب کاربری</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="stylesheet" type="text/css" href="../assets/styles/profile.css" />
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" type="text/css" href="../assets/styles/profile.css" />
-</head>
+    <body>
+        <header class="flex-center">
+            <div class="header-container">
+                <ul>
+                    <li class="flex-center"><a href="/exit" class="header-exit flex-center">خروج</a></li>
+                    <li class="flex-center"><a href="./profile.html" class="flex-center">حساب کاربری</a></li>
+                    <li class="header-cart flex-center">
+                        <a href="/cart" class="flex-center">
+                            <span class="cart-counter flex-center">
+                                ۳
+                            </span>
+                            <i class="flaticon-smart-cart"></i>
+                        </a>
+                    </li>
+                    <li class="flex-center">
+                        <a href="./home.html" class="flex-center"><img src="../assets/images/LOGO.png" alt="Logo" class="header-logo" /></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
 
-<body>
-    <header class="flex-center">
-        <div class="header-container">
-            <ul>
-                <li class="flex-center"><a href="/exit" class="header-exit flex-center">خروج</a></li>
-                <li class="flex-center"><a href="./profile.html" class="flex-center">حساب کاربری</a></li>
-                <li class="header-cart flex-center">
-                    <a href="/cart" class="flex-center">
-                        <span class="cart-counter flex-center">
-                            ۳
-                        </span>
-                        <i class="flaticon-smart-cart"></i>
-                    </a>
-                </li>
-                <li class="flex-center">
-                    <a href="./home.html" class="flex-center"><img src="../assets/images/LOGO.png" alt="Logo" class="header-logo" /></a>
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <main class="profile">
-        <div class="container-fluid profile-info-container flex align-items-center">
-            <div class="container profile-info">
-                <div class="row">
-                    <div class="col-sm-6 profile-name flex justify-content-start align-items-center">
-                        <i class="glyph-icon flaticon-account"></i>
-                        <span>احسان خامس‌پناه</span>
-                    </div>
-                    <div class="col-sm-6 profile-description-container flex justify-content-end align-items-center">
-                        <div class="profile-description flex flex-col justify-content-center align-items-start">
-                            <div class="description-container flex-center">
-                                <i class="glyph-icon flaticon-phone"></i>
-                                <span>۰۹۱۲۳۴۵۶۷۸۹</span>
-                            </div>
-                            <div class="description-container flex-center">
-                                <i class="glyph-icon flaticon-mail"></i>
-                                <span>ekhamespanah@yahoo.com</span>
-                            </div>
-                            <div class="description-container flex-center">
-                                <i class="glyph-icon flaticon-card"></i>
-                                <span>۱۰۰۰۰۰ تومان</span>
+        <main class="profile">
+            <div class="container-fluid profile-info-container flex align-items-center">
+                <div class="container profile-info">
+                    <div class="row">
+                        <div class="col-sm-6 profile-name flex justify-content-start align-items-center">
+                            <i class="glyph-icon flaticon-account"></i>
+                            <span>احسان خامس‌پناه</span>
+                        </div>
+                        <div class="col-sm-6 profile-description-container flex justify-content-end align-items-center">
+                            <div class="profile-description flex flex-col justify-content-center align-items-start">
+                                <div class="description-container flex-center">
+                                    <i class="glyph-icon flaticon-phone"></i>
+                                    <span>۰۹۱۲۳۴۵۶۷۸۹</span>
+                                </div>
+                                <div class="description-container flex-center">
+                                    <i class="glyph-icon flaticon-mail"></i>
+                                    <span>ekhamespanah@yahoo.com</span>
+                                </div>
+                                <div class="description-container flex-center">
+                                    <i class="glyph-icon flaticon-card"></i>
+                                    <span>۱۰۰۰۰۰ تومان</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container profile-content flex-center">
-            <input class="radio" id="credit-tab-select" name="group" type="radio" checked>
-            <input class="radio" id="orders-tab-select" name="group" type="radio">
-            <div class="profile-options flex justify-content-between align-items-center">
-                <label class="orders-tab-label flex-center" for="orders-tab-select">
-                    سفارش‌ها
-                </label>
-                <hr class="vertical-dash" />
-                <label class="credit-tab-label flex-center" for="credit-tab-select">
-                    افزایش اعتبار
-                </label>
-            </div>
-            <div class="profile-tab credit-tab">
-                <form action="/cart" class="row add-credit flex align-items-center">
-                    <div class="col-sm-8">
-                        <input type="text" name="credit" placeholder="میزان افزایش اعتبار" class="loghme-input-text ">
-                    </div>
-                    <div class="col-sm-4">
-                        <input type="submit" value="افزایش" class="loghme-button loghme-button-style">
-                    </div>
-                </form>
-            </div>
-            <div class="profile-tab orders-tab">
-                <div class="profile-orders-container flex-center flex-col">
-                    <div class="profile-order row">
-                        <div class="col-lg-1 col-2 flex-center">
-                            <span>۱</span>
+            <div class="container profile-content flex-center">
+                <input class="radio" id="credit-tab-select" name="group" type="radio" checked>
+                <input class="radio" id="orders-tab-select" name="group" type="radio">
+                <div class="profile-options flex justify-content-between align-items-center">
+                    <label class="orders-tab-label flex-center" for="orders-tab-select">
+                        سفارش‌ها
+                    </label>
+                    <hr class="vertical-dash" />
+                    <label class="credit-tab-label flex-center" for="credit-tab-select">
+                        افزایش اعتبار
+                    </label>
+                </div>
+                <div class="profile-tab credit-tab">
+                    <form action="/cart" class="row add-credit flex align-items-center">
+                        <div class="col-sm-8">
+                            <input type="text" name="credit" placeholder="میزان افزایش اعتبار" class="loghme-input-text ">
                         </div>
-                        <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
-                            <span>رستوران خامس</span>
+                        <div class="col-sm-4">
+                            <input type="submit" value="افزایش" class="loghme-button loghme-button-style">
                         </div>
-                        <div class="col-lg-5 col-5 delivery-button-container flex-center">
-                            <a href="/menu" class="loghme-button-style in-delivery delivery-button">
-                                پیک در مسیر
-                            </a>
+                    </form>
+                </div>
+                <div class="profile-tab orders-tab">
+                    <div class="profile-orders-container flex-center flex-col">
+                        <div class="profile-order row">
+                            <div class="col-lg-1 col-2 flex-center">
+                                <span>۱</span>
+                            </div>
+                            <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
+                                <span>رستوران خامس</span>
+                            </div>
+                            <div class="col-lg-5 col-5 delivery-button-container flex-center">
+                                <a href="/menu" class="loghme-button-style in-delivery delivery-button">
+                                    پیک در مسیر
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="profile-order row">
-                        <div class="col-lg-1 col-2 flex-center">
-                            <span>۲</span>
+                        <div class="profile-order row">
+                            <div class="col-lg-1 col-2 flex-center">
+                                <span>۲</span>
+                            </div>
+                            <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
+                                <span>رستوران خامس</span>
+                            </div>
+                            <div class="col-lg-5 col-5 delivery-button-container flex-center">
+                                <a href="/menu" class="loghme-button-style delivery-searching delivery-button">
+                                    در جست‌و‌جوی پیک
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
-                            <span>رستوران خامس</span>
+                        <div class="profile-order row">
+                            <div class="col-lg-1 col-2 flex-center">
+                                <span>۳</span>
+                            </div>
+                            <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
+                                <span>رستوران خامس</span>
+                            </div>
+                            <div class="col-lg-5 col-5 delivery-button-container flex-center">
+                                <a href="/menu" class="loghme-button-style factor-button delivery-button">
+                                    مشاهده فاکتور
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-lg-5 col-5 delivery-button-container flex-center">
-                            <a href="/menu" class="loghme-button-style delivery-searching delivery-button">
-                                در جست‌و‌جوی پیک
-                            </a>
+                        <div class="profile-order row">
+                            <div class="col-lg-1 col-2 flex-center">
+                                <span>۴</span>
+                            </div>
+                            <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
+                                <span>رستوران خامس</span>
+                            </div>
+                            <div class="col-lg-5 col-5 delivery-button-container flex-center">
+                                <a href="/menu" class="loghme-button-style factor-button delivery-button">
+                                    مشاهده فاکتور
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="profile-order row">
-                        <div class="col-lg-1 col-2 flex-center">
-                            <span>۳</span>
+                        <div class="profile-order row">
+                            <div class="col-lg-1 col-2 flex-center">
+                                <span>۵</span>
+                            </div>
+                            <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
+                                <span>رستوران خامس</span>
+                            </div>
+                            <div class="col-lg-5 col-5 delivery-button-container flex-center">
+                                <a href="/menu" class="loghme-button-style factor-button delivery-button">
+                                    مشاهده فاکتور
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
-                            <span>رستوران خامس</span>
+                        <div class="profile-order row">
+                            <div class="col-lg-1 col-2 flex-center">
+                                <span>۶</span>
+                            </div>
+                            <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
+                                <span>رستوران خامس</span>
+                            </div>
+                            <div class="col-lg-5 col-5 delivery-button-container flex-center">
+                                <a href="/menu" class="loghme-button-style factor-button delivery-button">
+                                    مشاهده فاکتور
+                                </a>
+                            </div>
                         </div>
-                        <div class="col-lg-5 col-5 delivery-button-container flex-center">
-                            <a href="/menu" class="loghme-button-style factor-button delivery-button">
-                                مشاهده فاکتور
-                            </a>
-                        </div>
-                    </div>
-                    <div class="profile-order row">
-                        <div class="col-lg-1 col-2 flex-center">
-                            <span>۴</span>
-                        </div>
-                        <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
-                            <span>رستوران خامس</span>
-                        </div>
-                        <div class="col-lg-5 col-5 delivery-button-container flex-center">
-                            <a href="/menu" class="loghme-button-style factor-button delivery-button">
-                                مشاهده فاکتور
-                            </a>
-                        </div>
-                    </div>
-                    <div class="profile-order row">
-                        <div class="col-lg-1 col-2 flex-center">
-                            <span>۵</span>
-                        </div>
-                        <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
-                            <span>رستوران خامس</span>
-                        </div>
-                        <div class="col-lg-5 col-5 delivery-button-container flex-center">
-                            <a href="/menu" class="loghme-button-style factor-button delivery-button">
-                                مشاهده فاکتور
-                            </a>
-                        </div>
-                    </div>
-                    <div class="profile-order row">
-                        <div class="col-lg-1 col-2 flex-center">
-                            <span>۶</span>
-                        </div>
-                        <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
-                            <span>رستوران خامس</span>
-                        </div>
-                        <div class="col-lg-5 col-5 delivery-button-container flex-center">
-                            <a href="/menu" class="loghme-button-style factor-button delivery-button">
-                                مشاهده فاکتور
-                            </a>
-                        </div>
-                    </div>
-                    <div class="profile-order row">
-                        <div class="col-lg-1 col-2 flex-center">
-                            <span>۷</span>
-                        </div>
-                        <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
-                            <span>رستوران خامس</span>
-                        </div>
-                        <div class="col-lg-5 col-5 delivery-button-container flex-center">
-                            <a href="/menu" class="loghme-button-style factor-button delivery-button">
-                                مشاهده فاکتور
-                            </a>
+                        <div class="profile-order row">
+                            <div class="col-lg-1 col-2 flex-center">
+                                <span>۷</span>
+                            </div>
+                            <div class="col-lg-6 col-5 profile-order-restaurant-name flex-center">
+                                <span>رستوران خامس</span>
+                            </div>
+                            <div class="col-lg-5 col-5 delivery-button-container flex-center">
+                                <a href="/menu" class="loghme-button-style factor-button delivery-button">
+                                    مشاهده فاکتور
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
-    <footer>
-        <span>© تمامی حقوق متعلق به لقمه است</span>
-    </footer>
-</body>
-
+        </main>
+        <footer>
+            <span>© تمامی حقوق متعلق به لقمه است</span>
+        </footer>
+    </body>
 </html>
