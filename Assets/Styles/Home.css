@@ -75,13 +75,6 @@
 }
 
 .home-search-form input[type="text"] {
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  background-color: #f3f3f3;
   width: 49%;
 }
 
@@ -116,10 +109,6 @@
   text-align: center;
   height: 60px;
   font-size: 1.5em;
-}
-
-.home-search-form input::placeholder {
-  text-align: center;
 }
 
 .home-section {
