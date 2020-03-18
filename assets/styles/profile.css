@@ -10,6 +10,12 @@
   align-items: center;
 }
 
+@media (max-width: 575.98px) {
+  .profile-info-container {
+    height: 200px;
+  }
+}
+
 .profile-name {
   display: flex;
   justify-content: start;
@@ -47,9 +53,6 @@
 
 .description-container > i {
   padding-left: 10px;
-}
-
-@media (max-width: 575.98px) {
 }
 
 .profile-content {

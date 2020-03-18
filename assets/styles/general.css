@@ -26,7 +26,7 @@ body {
   --gray-color: #979797;
 }
 
-.content {
+main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
