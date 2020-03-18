@@ -1,0 +1,6 @@
+@import "Auth.css";  
+
+.signup-body {
+  background: rgb(35,85,93);
+  background: linear-gradient(90deg, rgba(35,85,93,1) 0%, rgba(213,195,100,1) 100%);
+}
