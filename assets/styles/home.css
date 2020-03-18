@@ -78,8 +78,8 @@
 }
 
 .home-search-form input[type="submit"] {
-  background-color: #ffe66d;
-  color: #1A535C;
+  background-color: var(--maize-color);
+  color: var(--eng-green-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -130,7 +130,7 @@
 }
 
 .time-remaining {
-  border: 1px solid #1A535C;
+  border: 1px solid var(--eng-green-color);
   padding: 8px;
   border-radius: 4px;
 }

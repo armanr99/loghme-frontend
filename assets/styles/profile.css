@@ -3,7 +3,7 @@
 @import "footer.css";
 
 .profile-info-container {
-  background-color: #FF6B6B;
+  background-color: var(--pastel-red-color);
   color: white;
   height: 150px;
   display: flex;
@@ -55,7 +55,7 @@
 .profile-content {
   margin-top: 100px;
   background-color: white;
-  border: 1px solid #979797;
+  border: 1px solid var(--gray-color);
   border-radius: 30px;
   position: relative;
   padding-top: 80px;
@@ -82,7 +82,7 @@
 
 #credit-tab-select:checked ~ .profile-options .credit-tab-label,
 #orders-tab-select:checked ~ .profile-options .orders-tab-label {
-  background-color: #FF6B6B;
+  background-color: var(--pastel-red-color);
   font-weight: bold;
   color: white;
 }
@@ -118,7 +118,7 @@
 .vertical-dash {
   height: 100%;
   width: 0;
-  border-right: 2px dashed #979797;
+  border-right: 2px dashed var(--gray-color);
 }
 
 .credit-tab {
@@ -139,7 +139,7 @@
 }
 
 .add-credit input[type="submit"] {
-  background-color: #4ECDC4;
+  background-color: var(--med-turquoise-color);
   color: white;
   font-weight: bold;
   border: 1px solid #49a69f;
@@ -162,7 +162,7 @@
   border: 1px solid black;
   height: 70px;
   margin-bottom: 30px;
-  border: 1px solid #979797;
+  border: 1px solid var(--gray-color);
   border-radius: 4px;
   background-color: #fbfbfb;
 }
@@ -180,8 +180,8 @@
 }
 
 .profile-order-restaurant-name {
-  border-right: 1px solid #979797;
-  border-left: 1px solid #979797;
+  border-right: 1px solid var(--gray-color);
+  border-left: 1px solid var(--gray-color);
 }
 
 .factor-button {

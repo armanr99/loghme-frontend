@@ -5,8 +5,8 @@
   justify-content: center;
   align-items: center;
   min-height: 60px;
-  background-color: #1A535C;
-  color: #F7FFF7;
+  background-color: var(--eng-green-color);
+  color: var(--mint-cream-color);
   position: absolute;
   bottom: 0;
 }

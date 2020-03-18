@@ -4,7 +4,7 @@
 
 .restaurant-logo-container {
   height: 280px;
-  background: linear-gradient(to bottom, #FF6B6B 50%, transparent 50%);
+  background: linear-gradient(to bottom, var(--pastel-red-color) 50%, transparent 50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,7 +132,7 @@
 .restaurant-cart > p:first-child {
   font-weight: bold;
   padding-bottom: 1px;
-  border-bottom: 2px solid #979797;
+  border-bottom: 2px solid var(--gray-color);
   margin-bottom: 2px;
 }
 
@@ -141,7 +141,7 @@
 }
 
 .restaurant-cart button:last-child {
-  background-color: #4ECDC4;
+  background-color: var(--med-turquoise-color);
   color: white;
   font-weight: bold;
   margin-top: 10px;
@@ -202,9 +202,9 @@
 }
 
 .flaticon-plus {
-  color: #1A535C;
+  color: var(--eng-green-color);
 }
 
 .flaticon-minus {
-  color: #FF6B6B;
+  color: var(--pastel-red-color);
 }

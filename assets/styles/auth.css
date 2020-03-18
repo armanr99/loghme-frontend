@@ -51,7 +51,7 @@
 }
 
 .auth p {
-  color: #1a535c;
+  color: var(--eng-green-color);
   font-size: 0.7em;
   margin-top: 5px;
   margin-bottom: 0;
@@ -59,7 +59,7 @@
 
 .auth-link {
   font-size: 1.2em;
-  color: #ff6b6b;
+  color: var(--pastel-red-color);
 }
 
 .auth-link:hover {

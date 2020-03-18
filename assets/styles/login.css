@@ -6,6 +6,6 @@
 }
 
 .login-submit {
-  background-color: #ff6b6b;
+  background-color: var(--pastel-red-color);
   color: white;
 }
