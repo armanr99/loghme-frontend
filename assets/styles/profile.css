@@ -168,6 +168,11 @@
   border: 1px solid var(--gray-color);
   border-radius: 4px;
   background-color: #fbfbfb;
+  transition: all 0.3s ease;
+}
+
+.profile-order:hover {
+  transform: scale(1.05);
 }
 
 .profile-orders-container .profile-order:last-child {

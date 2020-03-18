@@ -66,6 +66,11 @@ main {
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
+  transition: all 0.3s ease;
+}
+
+.loghme-card:hover {
+  transform: scale(1.1);
 }
 
 .loghme-button-style {
