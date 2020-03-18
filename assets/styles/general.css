@@ -1,10 +1,15 @@
+@import "../fonts/vazir-fonts/fonts.css";
+@import "../icons/flaticon.css";
+@import "bootstrap.css";
+@import "normalize.css";
+
 html {
   height:100%;
 }
 
 body {
   font-family: Vazir !important;
-  background-color: #F7FFF7 !important;
+  background-color: var(--mint-cream-color) !important;
   direction: rtl;
   position: relative;
   padding-top: 60px;
@@ -12,7 +17,16 @@ body {
   min-height: 100%;
 }
 
-.content {
+:root {
+  --eng-green-color: #1a535c;
+  --med-turquoise-color: #4ecdc4;
+  --mint-cream-color: #f7fff7;
+  --pastel-red-color: #ff6b6b;
+  --maize-color: #ffe66d;
+  --gray-color: #979797;
+}
+
+main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,8 +42,8 @@ body {
 .section-title {
   font-size: 2.2em;
   font-weight: bold;
-  border-bottom: 3px solid #1A535C;
-  color: #1A535C;
+  border-bottom: 3px solid var(--eng-green-color);
+  color: var(--eng-green-color);
   margin-bottom: 10px;
 }
 
@@ -52,15 +66,19 @@ body {
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
+  transition: all 0.3s ease;
+}
+
+.loghme-card:hover {
+  transform: scale(1.1);
 }
 
 .loghme-button-style {
-  background-color: #ffe66d;
+  background-color: var(--maize-color);
   color: #484848;
   border-radius: 4px;
   text-decoration: none;
-  padding: 5px 17px;
-  font-size: 0.9em;
+  padding: 5px 14px;
 }
 
 .loghme-button-style:hover {
@@ -99,4 +117,8 @@ i::before {
 
 .loghme-input-text::placeholder {
   text-align: right;
+}
+
+.flex {
+  display: flex;
 }

@@ -1,4 +1,4 @@
-@import "Auth.css";  
+@import "auth.css";  
 
 .login-body {
   background: rgb(35,85,93);
@@ -6,6 +6,6 @@
 }
 
 .login-submit {
-  background-color: #ff6b6b;
+  background-color: var(--pastel-red-color);
   color: white;
 }
