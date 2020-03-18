@@ -1,11 +1,6 @@
 @import "../Fonts/vazir-fonts/fonts.css";
 @import "General.css";  
 
-.signup-body {
-  background: rgb(35,85,93);
-  background: linear-gradient(90deg, rgba(35,85,93,1) 0%, rgba(213,195,100,1) 100%);
-}
-
 .auth {
   width: 400px;
   position: absolute;
@@ -63,11 +58,11 @@
   margin-bottom: 0;
 }
 
-.auth-login-link {
+.auth-link {
   font-size: 1.2em;
   color: #ff6b6b;
 }
 
-.auth-login-link:hover {
+.auth-link:hover {
   text-decoration: none;
 }

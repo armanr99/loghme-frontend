@@ -1,0 +1,11 @@
+@import "Auth.css";  
+
+.login-body {
+  background: rgb(35,85,93);
+  background: linear-gradient(90deg, rgba(35,85,93,1) 0%, rgba(207,100,100,1) 100%); 
+}
+
+.login-submit {
+  background-color: #ff6b6b;
+  color: white;
+}
