@@ -51,17 +51,6 @@
 }
 
 @media (max-width: 575.98px) {
-  .profile-description-container, .profile-name {
-    justify-content: center;
-  }
-
-  .profile-info-container {
-    height: 210px;
-  }
-
-  .profile-description-container {
-    margin-top: 10px;
-  }
 }
 
 .profile-content {
@@ -80,16 +69,16 @@
 }
 
 .profile-tab {
-  display:none;
+  display : none;
 }
 
 .radio {
-  display:none;
+  display : none;
 }
 
 #credit-tab-select:checked ~ .credit-tab,
 #orders-tab-select:checked ~ .orders-tab {
-  display:block
+  display : block;
 }
 
 #credit-tab-select:checked ~ .profile-options .credit-tab-label,
@@ -156,4 +145,78 @@
   font-weight: bold;
   border: 1px solid #49a69f;
   padding: 13.85px 20px;
+}
+
+.orders-tab {
+  width: 90%;
+}
+
+.profile-orders-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-order {
+  width: 100%;
+  border: 1px solid black;
+  height: 70px;
+  margin-bottom: 30px;
+  border: 1px solid #979797;
+  border-radius: 4px;
+  background-color: #fbfbfb;
+}
+
+.profile-orders-container .profile-order:last-child {
+  margin-bottom: 0;
+}
+
+.profile-order div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.profile-order-restaurant-name {
+  border-right: 1px solid #979797;
+  border-left: 1px solid #979797;
+}
+
+.factor-button {
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.41);
+}
+
+.in-delivery {
+  background-color: #cdfec7;
+  color: #488141;
+}
+
+.delivery-searching {
+  background-color: #d3fffc;
+  color: #2e6d68;
+}
+
+@media (max-width: 767.98px) {
+  .delivery-button-container {
+    padding: 0 !important;
+  }
+
+  .delivery-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .profile-order {
+    height: 90px;
+  }
 }
