@@ -6,20 +6,16 @@
   background-color: var(--pastel-red-color);
   color: white;
   height: 150px;
-  display: flex;
-  align-items: center;
 }
 
 @media (max-width: 575.98px) {
   .profile-info-container {
     height: 200px;
   }
-}
 
-.profile-name {
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  .profile-name, .profile-description-container {
+    justify-content: center !important;
+  }
 }
 
 .profile-name span {
@@ -32,23 +28,8 @@
   font-size: 3em;
 }
 
-.profile-description-container {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
 .profile-description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   height: 100%;
-}
-
-.description-container {
-  display: flex;
-  align-items: center;
 }
 
 .description-container > i {
@@ -63,9 +44,6 @@
   position: relative;
   padding-top: 80px;
   padding-bottom: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1.3em;
   margin-bottom: 65px;
 }
@@ -98,9 +76,6 @@
   left: 0;
   right: 0;
   margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
@@ -110,9 +85,6 @@
 .profile-options label {
   height: 100%;
   width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   background-color: white;
   margin: 0;
@@ -132,11 +104,6 @@
   width: 100%;
 }
 
-.add-credit {
-  display: flex;
-  align-items: center;
-}
-
 .add-credit input[type="text"] {
   border: 1px solid #a7a7a7;
 }
@@ -151,13 +118,6 @@
 
 .orders-tab {
   width: 90%;
-}
-
-.profile-orders-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .profile-order {
@@ -180,9 +140,6 @@
 }
 
 .profile-order div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   height: 100%;
 }
