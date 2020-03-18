@@ -1,6 +1,7 @@
 @import "../fonts/vazir-fonts/fonts.css";
 @import "../icons/flaticon.css";
 @import "bootstrap.min.css";
+@import "normalize.css";
 
 html {
   height:100%;
