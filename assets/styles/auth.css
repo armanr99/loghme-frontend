@@ -1,5 +1,4 @@
-@import "../Fonts/vazir-fonts/fonts.css";
-@import "General.css";  
+@import "general.css";  
 
 .auth {
   width: 400px;

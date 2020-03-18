@@ -1,7 +1,6 @@
-@import "../Fonts/vazir-fonts/fonts.css";
-@import "General.css";
-@import "Header.css";
-@import "Footer.css";
+@import "general.css";
+@import "header.css";
+@import "footer.css";
 
 .restaurant-logo-container {
   height: 280px;
