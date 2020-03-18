@@ -5,9 +5,6 @@
 .restaurant-logo-container {
   height: 280px;
   background: linear-gradient(to bottom, var(--pastel-red-color) 50%, transparent 50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .restaurant-logo {
@@ -15,9 +12,6 @@
   width: 200px;
   border-radius: 25px;
   background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
 }
 
@@ -29,9 +23,6 @@
 }
 
 .restaurant-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: -20px;
   margin-bottom: 75px;
 }
@@ -57,9 +48,6 @@
 .menu-button-container {
   height: 20%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .menu-img-container {
@@ -74,9 +62,6 @@
 }
 
 .menu-food-name {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   height: 17%;
 }
 
@@ -117,10 +102,6 @@
   width: 90%;
   margin: 12px;
   padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
@@ -161,9 +142,6 @@
   min-height: 80px;
   width: 100%;
   border-bottom: 2px solid #cccccc;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .cart-item-name {
@@ -173,18 +151,11 @@
 
 .cart-item-info {
   width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .cart-item-count {
   width: 60%;
   height: 30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .cart-item-price {
