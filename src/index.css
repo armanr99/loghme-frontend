@@ -1,0 +1,32 @@
+@import "./assets/fonts/vazir-fonts/fonts.css";
+@import "./assets/icons/flaticon.css";
+@import "./assets/bootstrap/bootstrap.css";
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Vazir !important;
+  background-color: var(--mint-cream-color) !important;
+  direction: rtl;
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: 100%;
+}
+
+:root {
+  --eng-green-color: #1a535c;
+  --med-turquoise-color: #4ecdc4;
+  --mint-cream-color: #f7fff7;
+  --pastel-red-color: #ff6b6b;
+  --maize-color: #ffe66d;
+  --gray-color: #979797;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
