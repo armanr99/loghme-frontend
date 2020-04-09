@@ -1,0 +1,49 @@
+header {
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.header-container {
+  width: 80%;
+  height: 100%;
+}
+
+@media (max-width: 575.98px) {
+  .header-container {
+    width: 100%;
+  }
+}
+
+.header-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+.header-container li {
+  float: left;
+  height: 100%;
+}
+
+.header-container li:last-child {
+  border-right: none;
+  float: right;
+}
+
+.header-container li a {
+  text-align: center;
+  margin: 0 16px;
+  text-decoration: none;
+  height: 100%;
+  color: var(--eng-green-color);
+}
+
+.header-container li i {
+  width: 50%;
+}
