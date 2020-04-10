@@ -1,4 +1,5 @@
 import React from "react";
+import kfc from "../../../../../../../../assets/images/kfc.png"
 import "./styles.css";
 
 class RestaurantCart extends React.Component {
@@ -7,7 +8,7 @@ class RestaurantCart extends React.Component {
       <div class="loghme-card">
         <div class="restaurant-card-img-container">
           <a href="./restaurant.html">
-            <img src="../assets/images/KFC.png" alt="Restaurant Logo" />
+            <img src={kfc} alt="Restaurant Logo" />
           </a>
         </div>
         <div class="restaurant-card-info flex flex-col justify-content-center align-items-center">

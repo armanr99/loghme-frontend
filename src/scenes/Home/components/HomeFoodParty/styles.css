@@ -1,0 +1,12 @@
+.home-food-party {
+  /* min-height: 350px; */
+  /* border-bottom: 1px solid black; */
+  /* border: 1px solid blue; */
+  padding-top: 20px;
+}
+
+.time-remaining {
+  border: 1px solid var(--eng-green-color);
+  padding: 8px;
+  border-radius: 4px;
+}

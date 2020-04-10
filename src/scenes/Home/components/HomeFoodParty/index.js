@@ -1,5 +1,6 @@
 import React from "react";
 import SectionTitle from "../../../../components/SectionTitle";
+import FoodPartyContainer from "./components/FoodPartyContainer";
 import "./styles.css";
 
 class HomeFoodParty extends React.Component {
@@ -9,6 +10,7 @@ class HomeFoodParty extends React.Component {
         <SectionTitle title="جشن غذا!">
           <p class="time-remaining">زمان باقی‌مانده: ۲۱:۴۸</p>
         </SectionTitle>
+        <FoodPartyContainer />
       </div>
     );
   }

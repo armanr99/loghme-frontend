@@ -2,14 +2,3 @@
   min-height: 350px;
   text-align: center;
 }
-
-.home-food-party {
-  height: 350px;
-  border-bottom: 1px solid black;
-}
-
-.time-remaining {
-  border: 1px solid var(--eng-green-color);
-  padding: 8px;
-  border-radius: 4px;
-}
