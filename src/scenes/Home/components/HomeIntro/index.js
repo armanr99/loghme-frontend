@@ -1,6 +1,7 @@
 import React from "react";
 import HomeIntroCover from './components/HomeIntroCover';
 import HomeIntroDescription from "./components/HomeIntroDescription";
+import HomeIntroSearch from "./components/HomeIntroSearch";
 import "./styles.css";
 
 class HomeIntro extends React.Component {
@@ -9,6 +10,7 @@ class HomeIntro extends React.Component {
       <div class="home-intro flex-center">
         <HomeIntroCover />
         <HomeIntroDescription />
+        <HomeIntroSearch />
       </div>
     );
   }
