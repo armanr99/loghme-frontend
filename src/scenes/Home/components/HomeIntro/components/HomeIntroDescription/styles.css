@@ -1,0 +1,19 @@
+.home-intro-description {
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+  width: 80%;
+  height: 70%;
+  text-align: center;
+}
+
+.home-intro-description img {
+  width: 120px;
+  height: 120px;
+}
+
+@media (max-width: 575.98px) {
+  .home-intro-description {
+    height: 80%;
+  }
+}

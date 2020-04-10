@@ -1,0 +1,19 @@
+.restaurant-card-img-container {
+  width: 100%;
+  height: 60%;
+}
+
+.restaurant-card-img-container img {
+  height: 100%;
+}
+
+.restaurant-card-info {
+  font-weight: bold;
+  height: 35%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.restaurant-card-info a {
+  width: 55%;
+}
