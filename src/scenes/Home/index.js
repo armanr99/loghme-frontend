@@ -11,7 +11,7 @@ class Home extends React.Component {
     return (
       <div>
         <Header />
-        <main class="home">
+        <main className="home">
           <HomeIntro />
           <HomeFoodParty />
           <HomeRestaurants />

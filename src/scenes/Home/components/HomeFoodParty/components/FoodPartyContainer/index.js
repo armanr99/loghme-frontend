@@ -15,7 +15,6 @@ class FoodPartyContainer extends React.Component {
       arrows: false,
       autoplay: true,
       slidesToShow: 6,
-      slidesToScroll: 2,
       responsive: [
         {
           breakpoint: 1600,

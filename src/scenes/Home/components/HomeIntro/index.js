@@ -7,7 +7,7 @@ import "./styles.css";
 class HomeIntro extends React.Component {
   render() {
     return (
-      <div class="home-intro flex-center">
+      <div className="home-intro flex-center">
         <HomeIntroCover />
         <HomeIntroDescription />
         <HomeIntroSearch />

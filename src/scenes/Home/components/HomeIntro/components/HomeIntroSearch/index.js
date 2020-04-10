@@ -25,14 +25,14 @@ class HomeIntroSearch extends React.Component {
 
   render() {
     return (
-      <div class="container home-search">
-        <form class="home-search-form row justify-content-around align-items-center">
-          <div class="col-sm-9 search-text-inputs flex justify-content-around align-items-center">
+      <div className="container home-search">
+        <form className="home-search-form row justify-content-around align-items-center">
+          <div className="col-sm-9 search-text-inputs flex justify-content-around align-items-center">
             <input
               type="text"
               name="foodName"
               placeholder="نام غذا"
-              class="loghme-input-text"
+              className="loghme-input-text"
               value={this.state.foodName}
               onChange={this.handleInputChange}
             />
@@ -40,12 +40,12 @@ class HomeIntroSearch extends React.Component {
               type="text"
               name="restaurantName"
               placeholder="نام رستوران"
-              class="loghme-input-text"
+              className="loghme-input-text"
               value={this.state.restaurantName}
               onChange={this.handleInputChange}
             />
           </div>
-          <div class="col-sm-3 search-submit-input">
+          <div className="col-sm-3 search-submit-input">
             <input type="submit" value="جست‌و‌جو" />
           </div>
         </form>

@@ -13,7 +13,7 @@ class FoodPartyCard extends React.Component {
                 <span>پیتزا اعلا</span>
               </div>
               <div className="foodparty-score">
-                <span class="star">★</span>
+                <span className="star">★</span>
                 <span>۵</span>
               </div>
             </div>
@@ -27,10 +27,10 @@ class FoodPartyCard extends React.Component {
               <span className="old-price">۳۹۰۰۰</span>
             </div>
             <div className="foodparty-order flex justify-content-between">
-              <a href="/menu" class="loghme-button-style foodparty-buy">
+              <a href="/menu" className="loghme-button-style foodparty-buy">
                 خرید
               </a>
-              <span class="loghme-button-style foodparty-button-info">
+              <span className="loghme-button-style foodparty-button-info">
                 موجودی: ۳
               </span>
             </div>

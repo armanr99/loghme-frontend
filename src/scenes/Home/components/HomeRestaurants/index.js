@@ -6,7 +6,7 @@ import "./styles.css";
 class HomeRestaurants extends React.Component {
   render() {
     return (
-      <div class="home-section flex flex-col justify-content-center align-items-center home-restaurants">
+      <div className="home-section flex flex-col justify-content-center align-items-center home-restaurants">
         <SectionTitle title="رستوران‌ها" />
         <RestaurantsContainer />
       </div>
