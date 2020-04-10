@@ -6,6 +6,7 @@ class SectionTitle extends React.Component {
     return (
       <div class="section-title-container">
         <span class="section-title">{this.props.title}</span>
+        {this.props.children}
       </div>
     );
   }
