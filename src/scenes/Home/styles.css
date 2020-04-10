@@ -8,37 +8,8 @@
   border-bottom: 1px solid black;
 }
 
-.home-restaurants {
-  padding-top: 20px;
-  margin-bottom: 20px;
-}
-
 .time-remaining {
   border: 1px solid var(--eng-green-color);
   padding: 8px;
   border-radius: 4px;
-}
-
-.restaurant-card-img-container {
-  width: 100%;
-  height: 60%;
-}
-
-.restaurant-card-img-container img {
-  height: 100%;
-}
-
-.restaurant-card-info {
-  font-weight: bold;
-  height: 35%;
-  width: 100%;
-  overflow: hidden;
-}
-
-.restaurant-card-info a {
-  width: 55%;
-}
-
-.home-search-form input[type="text"]::placeholder {
-  text-align: center;
 }
