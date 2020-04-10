@@ -1,18 +1,19 @@
 import React from "react";
+import kfc from "../../../../../../../../assets/images/kfc.png"
 import "./styles.css";
 
 class RestaurantCart extends React.Component {
   render() {
     return (
-      <div class="loghme-card">
-        <div class="restaurant-card-img-container">
+      <div className="loghme-card">
+        <div className="restaurant-card-img-container">
           <a href="./restaurant.html">
-            <img src="../assets/images/KFC.png" alt="Restaurant Logo" />
+            <img src={kfc} alt="Restaurant Logo" />
           </a>
         </div>
-        <div class="restaurant-card-info flex flex-col justify-content-center align-items-center">
+        <div className="restaurant-card-info flex flex-col justify-content-center align-items-center">
           <p>Khames Fried Chicken</p>
-          <a href="/menu" class="loghme-button-style">
+          <a href="/menu" className="loghme-button-style">
             نمایش منو
           </a>
         </div>

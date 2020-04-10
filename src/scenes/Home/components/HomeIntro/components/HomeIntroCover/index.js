@@ -4,7 +4,7 @@ import "./styles.css";
 
 class HomeIntroCover extends React.Component {
   render() {
-    return <img src={cover} alt="Intro Cover" class="home-intro-cover" />;
+    return <img src={cover} alt="Intro Cover" className="home-intro-cover" />;
   }
 }
 

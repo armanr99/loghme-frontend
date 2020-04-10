@@ -106,3 +106,8 @@ i::before {
 .flex {
   display: flex;
 }
+
+.star {
+  padding-right: 2px;
+  color: #ffa526;
+}

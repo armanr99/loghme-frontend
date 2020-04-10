@@ -4,7 +4,7 @@ import RestaurantCard from './components/RestaurantCard';
 class RestaurantsContainer extends React.Component {
   render() {
     return (
-      <div class="container flex-wrap">
+      <div className="container flex-wrap">
           <RestaurantCard />
           <RestaurantCard />
           <RestaurantCard />

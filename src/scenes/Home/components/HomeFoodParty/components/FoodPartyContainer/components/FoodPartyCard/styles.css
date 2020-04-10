@@ -1,0 +1,108 @@
+.foodparty-card {
+  width: 235px !important;
+  height: 245px !important;
+  padding: 0 !important;
+}
+
+.foodparty-card:hover {
+  transform: none !important;
+}
+
+.foodparty-food-info {
+  height: 81%;
+  width: 100%;
+  padding: 5px 18px;
+  padding-top: 20px;
+}
+
+.foodparty-food-info > div {
+  width: 100%;
+}
+
+.foodparty-restaurant-name {
+  height: 19%;
+  width: 100%;
+  border-top: dashed 2px #b1b1b1;
+}
+
+.foodparty-restaurant-name span {
+  font-size: 1.2em;
+  color: #454545;
+}
+
+.foodparty-food-info-top {
+  height: 55%;
+}
+
+.foodparty-food-info-bottom {
+  height: 45%;
+}
+
+.foodparty-price {
+  width: 55%;
+}
+
+.foodparty-price span {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.old-price {
+  color: #979797;
+  text-decoration: line-through;
+  text-decoration-color: red;
+  text-decoration-thickness: 1.2px;
+}
+
+.foodparty-order {
+  width: 100%;
+  font-size: 0.85em;
+}
+
+.foodparty-image {
+  width: 50%;
+  height: 100%;
+}
+
+.foodparty-image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.foodparty-more-info {
+  width: 50%;
+  height: 100%;
+  padding: 8px;
+}
+
+.foodparty-buy {
+  background-color: var(--med-turquoise-color) !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.foodparty-button-info {
+  background-color: #f6fff6 !important;
+  border: 1px solid #d3d3d3;
+  color: #979a98;
+}
+
+.foodparty-name {
+  font-size: 1.3em;
+}
+
+.foodparty-order a, .foodparty-order span {
+  height: 25px !important;
+  border-radius: 8px !important;
+}
+
+.foodparty-order a {
+  padding: 2px 30px !important;
+}
+
+.foodparty-order span {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
