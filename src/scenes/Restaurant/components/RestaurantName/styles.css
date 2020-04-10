@@ -1,0 +1,9 @@
+.restaurant-name {
+  margin-top: -20px;
+  margin-bottom: 75px;
+}
+
+.restaurant-name p {
+  font-weight: bold;
+  font-size: 1.7em;
+}
