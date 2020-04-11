@@ -1,5 +1,5 @@
 import React from "react";
-import kfc from "../../../../../../../../assets/images/kfc.png"
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 class RestaurantCart extends React.Component {
@@ -7,15 +7,18 @@ class RestaurantCart extends React.Component {
     return (
       <div className="loghme-card">
         <div className="restaurant-card-img-container">
-          <a href="./restaurant.html">
-            <img src={kfc} alt="Restaurant Logo" />
-          </a>
+          <Link to={`/restaurants/${this.props.restaurant.id}`}>
+            <img src={this.props.restaurant.logo} alt="Restaurant Logo" />
+          </Link>
         </div>
         <div className="restaurant-card-info flex flex-col justify-content-center align-items-center">
-          <p>Khames Fried Chicken</p>
-          <a href="/menu" className="loghme-button-style">
+          <p>{this.props.restaurant.name}</p>
+          <Link
+            to={`/restaurants/${this.props.restaurant.id}`}
+            className="loghme-button-style"
+          >
             نمایش منو
-          </a>
+          </Link>
         </div>
       </div>
     );

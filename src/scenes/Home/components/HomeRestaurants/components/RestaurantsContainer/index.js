@@ -1,20 +1,28 @@
 import React from "react";
-import RestaurantCard from './components/RestaurantCard';
+import RestaurantCard from "./components/RestaurantCard";
+import API from "../../../../../../services/api";
 
 class RestaurantsContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      restaurants: [],
+    };
+  }
+
+  async componentDidMount() {
+    const response = await API.get("/restaurants");
+    const restaurants = response.data.restaurants;
+    this.setState({ restaurants });
+  }
+
   render() {
-    return (
-      <div className="container flex-wrap">
-          <RestaurantCard />
-          <RestaurantCard />
-          <RestaurantCard />
-          <RestaurantCard />
-          <RestaurantCard />
-          <RestaurantCard />
-          <RestaurantCard />
-          <RestaurantCard />
-      </div>
-    );
+    const restaurants = this.state.restaurants;
+    const restaurantCards = restaurants.map((restaurant) => (
+      <RestaurantCard restaurant={restaurant} key={restaurant.id} />
+    ));
+
+    return <div className="container flex-wrap">{restaurantCards}</div>;
   }
 }
 
