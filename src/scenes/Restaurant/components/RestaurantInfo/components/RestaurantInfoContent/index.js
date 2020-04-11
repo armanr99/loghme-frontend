@@ -9,7 +9,7 @@ class RestaurantInfoContent extends React.Component {
       <div className="container restaurant-bottom">
         <div className="row flex-row-reverse">
           <div className="col-lg-8 col-md-6 restaurant-menu">
-            <Menu />
+            <Menu restaurant={this.props.restaurant} />
           </div>
           <div className=" col-lg-4 col-md-6 restaurant-cart-container">
             <Cart />

@@ -5,7 +5,7 @@ class RestaurantName extends React.Component {
   render() {
     return (
       <div className="restaurant-name flex-center">
-        <p>رستوران خامس</p>
+        <p>{this.props.restaurant.name}</p>
       </div>
     );
   }

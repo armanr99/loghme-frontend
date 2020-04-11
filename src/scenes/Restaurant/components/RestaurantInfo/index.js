@@ -7,7 +7,7 @@ class RestaurantInfo extends React.Component {
     return (
       <div>
         <RestaurantInfoTitle />
-        <RestaurantInfoContent />
+        <RestaurantInfoContent restaurant={this.props.restaurant} />
       </div>
     );
   }

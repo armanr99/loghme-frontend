@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import convertToPersianDigits from "../../../../../../../../../services/tools/convertToPersianDigits";
 
 class MenuCard extends React.Component {
   render() {
@@ -7,15 +8,15 @@ class MenuCard extends React.Component {
       <div className="loghme-card">
         <div className="menu-info flex-center flex-col">
           <div className="menu-img-container flex-center">
-            <img src="../assets/images/pizza.jpg" alt="Food" />
+            <img src={this.props.food.image} alt="Food" />
           </div>
           <div className="menu-food-name flex justify-content-around align-items-center">
-            <span>پیتزا اعلا</span>
-            <span>۵</span>
+            <span>{this.props.food.name}</span>
+            <span>{convertToPersianDigits(this.props.food.popularity)}</span>
             <span className="star">★</span>
           </div>
           <div className="menu-food-price flex-center">
-            <span>۳۹۰۰۰ تومان</span>
+            <span>{convertToPersianDigits(this.props.food.price)} تومان</span>
           </div>
         </div>
         <div className="menu-button-container flex-center">
