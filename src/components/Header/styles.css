@@ -43,7 +43,3 @@ header {
   height: 100%;
   color: var(--eng-green-color);
 }
-
-.header-container li i {
-  width: 50%;
-}

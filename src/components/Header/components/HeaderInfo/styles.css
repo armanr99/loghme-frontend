@@ -3,7 +3,9 @@
 }
 
 .header-cart {
+  width: 30px;
   position: relative;
+  cursor: pointer;
 }
 
 .cart-counter {
@@ -17,5 +19,5 @@
   padding-top: 1px;
   position: absolute;
   top: 20%;
-  right: 25%;
+  right: 0;
 }
