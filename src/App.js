@@ -11,7 +11,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {},
+      user: {
+        id: 0,
+        credit: 0,
+        firstName: "",
+        lastName: "",
+        phoneNumber: "",
+        email: "",
+        cart: [],
+        orders: [],
+      },
     };
 
     this.updateUser = this.updateUser.bind(this);
@@ -23,7 +32,7 @@ class App extends React.Component {
 
   async updateUser() {
     const response = await API.get("/user");
-    const user = response.data.user;
+    const user = response.data;
     this.setState({ user });
   }
 
@@ -46,7 +55,7 @@ class App extends React.Component {
           <Route
             path="/restaurants/:id"
             render={(props) => (
-              <Profile
+              <Restaurant
                 {...props}
                 user={this.state.user}
                 updateUser={this.updateUser}
@@ -56,7 +65,7 @@ class App extends React.Component {
           <Route
             path="/"
             render={(props) => (
-              <Profile
+              <Home
                 {...props}
                 user={this.state.user}
                 updateUser={this.updateUser}

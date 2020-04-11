@@ -10,8 +10,11 @@ class Profile extends React.Component {
       <div>
         <Header />
         <main>
-          <ProfileInfo />
-          <ProfileTabs />
+          <ProfileInfo user={this.props.user} />
+          <ProfileTabs
+            user={this.props.user}
+            updateUser={this.props.updateUser}
+          />
         </main>
         <Footer />
       </div>
