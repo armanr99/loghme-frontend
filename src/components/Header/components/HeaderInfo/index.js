@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
 
 class HeaderInfo extends React.Component {
   render() {
@@ -18,7 +19,9 @@ class HeaderInfo extends React.Component {
           </li>
           <li className="header-cart flex-center">
             <a href="/cart" className="flex-center">
-              <span className="cart-counter flex-center">۳</span>
+              <span className="cart-counter flex-center">
+                {convertToPersianDigits(this.props.user.cart.length)}
+              </span>
               <i className="flaticon-smart-cart"></i>
             </a>
           </li>

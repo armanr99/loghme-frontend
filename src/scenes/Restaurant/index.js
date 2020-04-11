@@ -27,7 +27,7 @@ class Restaurant extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header user={this.props.user} updateUser={this.props.updateUser} />
         <main className="restaurant">
           <RestaurantLogo restaurant={this.state.restaurant} />
           <RestaurantName restaurant={this.state.restaurant} />

@@ -5,13 +5,20 @@ import ProfileInfo from "./components/ProfileInfo";
 import ProfileTabs from "./components/ProfileTabs";
 
 class Profile extends React.Component {
+  componentDidMount() {
+    this.props.updateUser();
+  }
+
   render() {
     return (
       <div>
-        <Header />
+        <Header user={this.props.user} updateUser={this.props.updateUser} />
         <main>
-          <ProfileInfo />
-          <ProfileTabs />
+          <ProfileInfo user={this.props.user} />
+          <ProfileTabs
+            user={this.props.user}
+            updateUser={this.props.updateUser}
+          />
         </main>
         <Footer />
       </div>
