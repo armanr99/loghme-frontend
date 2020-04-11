@@ -4,22 +4,22 @@ import "./styles.css";
 class MenuCard extends React.Component {
   render() {
     return (
-      <div class="loghme-card">
-        <div class="menu-info flex-center flex-col">
-          <div class="menu-img-container flex-center">
+      <div className="loghme-card">
+        <div className="menu-info flex-center flex-col">
+          <div className="menu-img-container flex-center">
             <img src="../assets/images/pizza.jpg" alt="Food" />
           </div>
-          <div class="menu-food-name flex justify-content-around align-items-center">
+          <div className="menu-food-name flex justify-content-around align-items-center">
             <span>پیتزا اعلا</span>
             <span>۵</span>
-            <span class="star">★</span>
+            <span className="star">★</span>
           </div>
-          <div class="menu-food-price flex-center">
+          <div className="menu-food-price flex-center">
             <span>۳۹۰۰۰ تومان</span>
           </div>
         </div>
-        <div class="menu-button-container flex-center">
-          <a href="/menu" class="loghme-button-style">
+        <div className="menu-button-container flex-center">
+          <a href="/menu" className="loghme-button-style">
             افزودن به سبد خرید
           </a>
         </div>

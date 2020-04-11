@@ -6,14 +6,14 @@ import OrderInfo from "./components/OrderInfo";
 class Cart extends React.Component {
   render() {
     return (
-      <div class="restaurant-cart flex flex-col justify-content-around align-items-center">
+      <div className="restaurant-cart flex flex-col justify-content-around align-items-center">
         <p>سبد خرید</p>
-        <div class="cart-items">
+        <div className="cart-items">
           <CartItem />
           <CartItem />
         </div>
         <OrderInfo />
-        <button class="loghme-button loghme-button-style">تأیید نهایی</button>
+        <button className="loghme-button loghme-button-style">تأیید نهایی</button>
       </div>
     );
   }

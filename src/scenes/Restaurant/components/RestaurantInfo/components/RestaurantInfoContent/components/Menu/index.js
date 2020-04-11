@@ -4,7 +4,7 @@ import MenuCard from "./components";
 class Menu extends React.Component {
   render() {
     return (
-      <div class="flex-wrap">
+      <div className="flex-wrap">
         <MenuCard />
         <MenuCard />
         <MenuCard />

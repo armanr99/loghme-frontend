@@ -11,7 +11,7 @@ class Restaurant extends React.Component {
     return (
       <div>
         <Header />
-        <main class="restaurant">
+        <main className="restaurant">
           <RestaurantLogo />
           <RestaurantName />
           <RestaurantInfo />

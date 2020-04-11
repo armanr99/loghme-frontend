@@ -4,7 +4,7 @@ import "./styles.css";
 class RestaurantName extends React.Component {
   render() {
     return (
-      <div class="restaurant-name flex-center">
+      <div className="restaurant-name flex-center">
         <p>رستوران خامس</p>
       </div>
     );

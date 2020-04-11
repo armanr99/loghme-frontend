@@ -5,8 +5,8 @@ import "./styles.css";
 class RestaurantLogo extends React.Component {
   render() {
     return (
-      <div class="restaurant-logo-container flex-center">
-        <div class="restaurant-logo flex-center">
+      <div className="restaurant-logo-container flex-center">
+        <div className="restaurant-logo flex-center">
           <img src={mcdonalds} alt="Restaurant Logo" />
         </div>
       </div>
