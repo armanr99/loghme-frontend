@@ -1,0 +1,59 @@
+.profile-content {
+  margin-top: 100px;
+  background-color: white;
+  border: 1px solid var(--gray-color);
+  border-radius: 30px;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 55px;
+  font-size: 1.3em;
+  margin-bottom: 65px;
+}
+
+.profile-tab {
+  display: none;
+}
+
+.radio {
+  display: none;
+}
+
+#credit-tab-select:checked ~ .credit-tab,
+#orders-tab-select:checked ~ .orders-tab {
+  display: block;
+}
+
+#credit-tab-select:checked ~ .profile-options .credit-tab-label,
+#orders-tab-select:checked ~ .profile-options .orders-tab-label {
+  background-color: var(--pastel-red-color);
+  font-weight: bold;
+  color: white;
+}
+
+.profile-options {
+  width: 70%;
+  height: 65px;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
+  overflow: hidden;
+}
+
+.profile-options label {
+  height: 100%;
+  width: 50%;
+  cursor: pointer;
+  background-color: white;
+  margin: 0;
+}
+
+.vertical-dash {
+  height: 100%;
+  width: 0;
+  border-right: 2px dashed var(--gray-color);
+}

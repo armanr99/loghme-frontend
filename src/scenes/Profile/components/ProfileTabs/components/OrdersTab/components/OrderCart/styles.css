@@ -1,0 +1,64 @@
+.profile-order {
+  width: 100%;
+  border: 1px solid black;
+  height: 70px;
+  margin-bottom: 30px;
+  border: 1px solid var(--gray-color);
+  border-radius: 4px;
+  background-color: #fbfbfb;
+  transition: all 0.3s ease;
+}
+
+.profile-order:hover {
+  transform: scale(1.05);
+}
+
+.profile-orders-container .profile-order:last-child {
+  margin-bottom: 0;
+}
+
+.profile-order div {
+  text-align: center;
+  height: 100%;
+}
+
+.profile-order-restaurant-name {
+  border-right: 1px solid var(--gray-color);
+  border-left: 1px solid var(--gray-color);
+}
+
+.factor-button {
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.41);
+}
+
+.in-delivery {
+  background-color: #cdfec7 !important;
+  color: #488141;
+}
+
+.delivery-searching {
+  background-color: #d3fffc !important;
+  color: #2e6d68;
+}
+
+@media (max-width: 767.98px) {
+  .delivery-button-container {
+    padding: 0 !important;
+  }
+
+  .delivery-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .profile-order {
+    height: 90px;
+  }
+}
