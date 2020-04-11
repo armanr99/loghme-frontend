@@ -35,8 +35,8 @@ class ProfileTabs extends React.Component {
             افزایش اعتبار
           </label>
         </div>
-        <CreditTab />
-        <OrdersTab />
+        <CreditTab updateUser={this.props.updateUser} />
+        <OrdersTab user={this.props.user} />
       </div>
     );
   }
