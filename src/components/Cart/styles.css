@@ -1,6 +1,5 @@
 
 .restaurant-cart {
-  /* margin: 12px; */
   padding: 15px;
   background-color: white;
   border-radius: 4px;
@@ -8,6 +7,11 @@
   position: sticky;
   top: 70px;
   font-size: 1.2em;
+}
+
+.restaurant-page-cart {
+  margin: 12px;
+  width: 90%;
 }
 
 .restaurant-cart > p:first-child {

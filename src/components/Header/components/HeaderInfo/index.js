@@ -33,7 +33,7 @@ class HeaderInfo extends React.Component {
           style={{ marginTop: "100px" }}
           size="sm"
         >
-          <Cart />
+          <Cart inRestaurant={false} />
         </Modal>
         <ul>
           <li className="flex-center">
