@@ -5,17 +5,64 @@ import Restaurant from "./scenes/Restaurant";
 import Profile from "./scenes/Profile";
 import Signup from "./scenes/Signup";
 import Login from "./scenes/Login";
+import API from "./services/api";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+    };
+
+    this.updateUser = this.updateUser.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateUser();
+  }
+
+  async updateUser() {
+    const response = await API.get("/user");
+    const user = response.data.user;
+    this.setState({ user });
+  }
+
   render() {
     return (
       <Router>
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/restaurants/:id" component={Restaurant} />
-          <Route path="/" component={Home} />
+          <Route
+            path="/profile"
+            render={(props) => (
+              <Profile
+                {...props}
+                user={this.state.user}
+                updateUser={this.updateUser}
+              />
+            )}
+          />
+          <Route
+            path="/restaurants/:id"
+            render={(props) => (
+              <Profile
+                {...props}
+                user={this.state.user}
+                updateUser={this.updateUser}
+              />
+            )}
+          />
+          <Route
+            path="/"
+            render={(props) => (
+              <Profile
+                {...props}
+                user={this.state.user}
+                updateUser={this.updateUser}
+              />
+            )}
+          />
         </Switch>
       </Router>
     );
