@@ -11,21 +11,11 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/restaurant">
-            <Restaurant />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/restaurants/:id" component={Restaurant} />
+          <Route path="/" component={Home} />
         </Switch>
       </Router>
     );
