@@ -1,0 +1,34 @@
+.profile-info-container {
+  background-color: var(--pastel-red-color);
+  color: white;
+  height: 150px;
+}
+
+@media (max-width: 575.98px) {
+  .profile-info-container {
+    height: 200px;
+  }
+
+  .profile-name,
+  .profile-description-container {
+    justify-content: center !important;
+  }
+}
+
+.profile-name span {
+  font-weight: bold;
+  font-size: 1.6em;
+  padding-right: 10px;
+}
+
+.profile-name i::before {
+  font-size: 3em;
+}
+
+.profile-description {
+  height: 100%;
+}
+
+.description-container > i {
+  padding-left: 10px;
+}
