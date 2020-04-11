@@ -19,7 +19,7 @@ class RestaurantsContainer extends React.Component {
   render() {
     const restaurants = this.state.restaurants;
     const restaurantCards = restaurants.map((restaurant) => (
-      <RestaurantCard key={restaurants.id} restaurant={restaurant} />
+      <RestaurantCard restaurant={restaurant} key={restaurant.id} />
     ));
 
     return <div className="container flex-wrap">{restaurantCards}</div>;

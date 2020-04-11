@@ -2,6 +2,7 @@
   width: 235px !important;
   height: 245px !important;
   padding: 0 !important;
+  direction: rtl !important;
 }
 
 .foodparty-card:hover {
@@ -23,6 +24,7 @@
   height: 19%;
   width: 100%;
   border-top: dashed 2px #b1b1b1;
+  overflow: hidden;
 }
 
 .foodparty-restaurant-name span {
@@ -91,6 +93,7 @@
 
 .foodparty-name {
   font-size: 1.3em;
+  overflow: hidden;
 }
 
 .foodparty-order a, .foodparty-order span {
