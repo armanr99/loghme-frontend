@@ -96,7 +96,8 @@
   overflow: hidden;
 }
 
-.foodparty-order a, .foodparty-order span {
+.foodparty-order a,
+.foodparty-order span {
   height: 25px !important;
   border-radius: 8px !important;
 }

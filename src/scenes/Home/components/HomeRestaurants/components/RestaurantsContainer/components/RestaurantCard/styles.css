@@ -14,6 +14,11 @@
   overflow: hidden;
 }
 
+.restaurant-card-info p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .restaurant-card-info a {
   width: 55%;
 }

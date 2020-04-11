@@ -13,7 +13,7 @@ class FoodPartyCard extends React.Component {
             </div>
             <div className="foodparty-more-info flex flex-col align-items-start justify-content-start">
               <div className="foodparty-name">
-                <span>{this.props.partyFood.name}</span>
+                <p>{this.props.partyFood.name}</p>
               </div>
               <div className="foodparty-score">
                 <span className="star">★</span>
