@@ -12,7 +12,7 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header user={this.props.user} updateUser={this.props.updateUser} />
         <main>
           <ProfileInfo user={this.props.user} />
           <ProfileTabs

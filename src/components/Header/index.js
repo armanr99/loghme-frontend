@@ -9,7 +9,10 @@ class Header extends React.Component {
       <header className="flex-center">
         <div className="header-container">
           <ul>
-            <HeaderInfo />
+            <HeaderInfo
+              user={this.props.user}
+              updateUser={this.props.updateUser}
+            />
             <HeaderImage />
           </ul>
         </div>
