@@ -33,7 +33,11 @@ class HeaderInfo extends React.Component {
           style={{ marginTop: "100px" }}
           size="sm"
         >
-          <Cart inRestaurant={false} />
+          <Cart
+            inRestaurant={false}
+            user={this.props.user}
+            updateUser={this.props.updateUser}
+          />
         </Modal>
         <ul>
           <li className="flex-center">
@@ -49,7 +53,7 @@ class HeaderInfo extends React.Component {
           <li className="header-cart flex-center" onClick={this.handleShowCart}>
             <div href="/cart" className="flex-center">
               <span className="cart-counter flex-center">
-                {convertToPersianDigits(this.props.user.cart.length)}
+                {convertToPersianDigits(this.props.user.cart.items.length)}
               </span>
               <i className="flaticon-smart-cart"></i>
             </div>

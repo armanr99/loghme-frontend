@@ -12,7 +12,11 @@ class RestaurantInfoContent extends React.Component {
             <Menu restaurant={this.props.restaurant} />
           </div>
           <div className=" col-lg-4 col-md-6 restaurant-cart-container">
-            <Cart inRestaurant={true} />
+            <Cart
+              inRestaurant={true}
+              user={this.props.user}
+              updateUser={this.props.updateUser}
+            />
           </div>
         </div>
       </div>

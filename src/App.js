@@ -18,8 +18,8 @@ class App extends React.Component {
         lastName: "",
         phoneNumber: "",
         email: "",
-        cart: [],
         orders: [],
+        cart: { items: [], totalPrice: 0 },
       },
     };
 
