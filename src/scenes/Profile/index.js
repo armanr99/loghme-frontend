@@ -5,6 +5,10 @@ import ProfileInfo from "./components/ProfileInfo";
 import ProfileTabs from "./components/ProfileTabs";
 
 class Profile extends React.Component {
+  componentDidMount() {
+    this.props.updateUser();
+  }
+
   render() {
     return (
       <div>
