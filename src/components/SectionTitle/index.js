@@ -23,5 +23,5 @@ export default SectionTitle;
 SectionTitle.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
-  children: PropTypes.object
-}
+  children: PropTypes.object,
+};

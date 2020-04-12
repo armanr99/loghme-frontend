@@ -1,12 +1,12 @@
 import React from "react";
-import Cart from "../../../Cart";
-import Modal from "react-bootstrap/Modal";
-import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
-import { connect } from "react-redux";
-import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
-import "./styles.css";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import Modal from "react-bootstrap/Modal";
+import { connect } from "react-redux";
+import Cart from "../../../Cart";
+import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
+import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
+import "./styles.css";
 
 class HeaderInfo extends React.Component {
   constructor(props) {
@@ -33,7 +33,6 @@ class HeaderInfo extends React.Component {
         <Modal
           show={this.state.showCart}
           onHide={this.handleCloseCart}
-          centerd={true}
           style={{ marginTop: "100px" }}
           size="sm"
         >

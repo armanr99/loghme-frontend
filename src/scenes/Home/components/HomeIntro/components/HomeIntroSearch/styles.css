@@ -31,7 +31,11 @@
   width: 49%;
 }
 
-.home-search-form input[type="submit"] {
+.search-submit-button-container {
+  margin-right: -50px;
+}
+
+.search-submit-button {
   background-color: var(--maize-color);
   color: var(--eng-green-color);
   border: none;
@@ -53,9 +57,13 @@
   .search-submit-input {
     padding-right: 15px !important;
   }
+
+  .search-submit-button-container {
+    margin-right: 0;
+  }
 }
 
-.home-search-form input {
+.home-search-form input, .search-submit-button {
   text-align: center;
   height: 60px;
   font-size: 1.5em;

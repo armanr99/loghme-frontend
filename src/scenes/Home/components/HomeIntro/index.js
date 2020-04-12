@@ -1,5 +1,5 @@
 import React from "react";
-import HomeIntroCover from './components/HomeIntroCover';
+import HomeIntroCover from "./components/HomeIntroCover";
 import HomeIntroDescription from "./components/HomeIntroDescription";
 import HomeIntroSearch from "./components/HomeIntroSearch";
 import "./styles.css";

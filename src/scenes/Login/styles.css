@@ -11,6 +11,6 @@
 }
 
 .login-submit {
-  background-color: var(--pastel-red-color);
-  color: white;
+  background-color: var(--pastel-red-color) !important;
+  color: white !important;
 }

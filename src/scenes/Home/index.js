@@ -20,7 +20,6 @@ class Home extends React.Component {
     this.fetchRestaurants = this.fetchRestaurants.bind(this);
     this.fetchPartyFoods = this.fetchPartyFoods.bind(this);
     this.fetchRemainingSeconds = this.fetchRemainingSeconds.bind(this);
-    this.decrementTime = this.decrementTime.bind(this);
   }
 
   async fetchRestaurants() {
@@ -39,14 +38,6 @@ class Home extends React.Component {
     const response = await API.get("foodparty/remainingSeconds");
     const remainingSeconds = response.data.remainingSeconds;
     this.setState({ remainingSeconds });
-
-    this.timer = setInterval(() => this.decrementTime(), 1000);
-  }
-
-  decrementTime() {
-    const remainingSeconds = this.state.remainingSeconds;
-    const newRemainingSeconds = remainingSeconds > 0 ? remainingSeconds - 1 : 0;
-    this.setState({ remainingSeconds: newRemainingSeconds });
   }
 
   async componentDidMount() {
@@ -57,10 +48,6 @@ class Home extends React.Component {
       this.fetchRemainingSeconds(),
     ]);
     this.setState({ loading: false });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
   }
 
   render() {

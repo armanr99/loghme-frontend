@@ -1,11 +1,11 @@
 import React from "react";
+import { toast } from "react-toastify";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import API from "../../../../services/api";
+import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
 import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
 import { error, success } from "../../../../services/toastify/configs";
-import { toast } from "react-toastify";
-import API from "../../../../services/api";
-import { connect } from "react-redux";
-import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
-import PropTypes from "prop-types";
 import "./styles.css";
 
 class CartItemCard extends React.Component {
@@ -89,9 +89,9 @@ CartItemCard.propTypes = {
       name: PropTypes.isRequired,
       price: PropTypes.number.isRequired,
       restaurant: PropTypes.shape({
-        id: PropTypes.string.isRequired
+        id: PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
-    count: PropTypes.number.isRequired
-  }).isRequired
-}
+    count: PropTypes.number.isRequired,
+  }).isRequired,
+};

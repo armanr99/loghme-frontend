@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import RestaurantsContainer from "./components/RestaurantsContainer";
 import SectionTitle from "../../../../components/SectionTitle";
-import PropTypes from "prop-types";
 import "./styles.css";
 
 class HomeRestaurants extends React.Component {
@@ -18,5 +18,5 @@ class HomeRestaurants extends React.Component {
 export default HomeRestaurants;
 
 HomeRestaurants.propTypes = {
-  restaurants: PropTypes.array.isRequired
-}
+  restaurants: PropTypes.array.isRequired,
+};

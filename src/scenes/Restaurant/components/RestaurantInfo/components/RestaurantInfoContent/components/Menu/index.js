@@ -1,6 +1,6 @@
 import React from "react";
-import MenuCard from "./components";
 import PropTypes from "prop-types";
+import MenuCard from "./components";
 
 class Menu extends React.Component {
   render() {

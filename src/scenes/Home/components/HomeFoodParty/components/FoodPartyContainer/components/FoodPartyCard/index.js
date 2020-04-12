@@ -1,8 +1,8 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
+import PropTypes from "prop-types";
 import FoodModalCard from "../../../../.../../../../../../components/FoodModalCard";
 import convertToPersianDigits from "../../../../../../../../services/tools/convertToPersianDigits";
-import PropTypes from "prop-types";
 import "./styles.css";
 
 class FoodPartyCard extends React.Component {
@@ -20,7 +20,8 @@ class FoodPartyCard extends React.Component {
     this.setState({ showCart: false });
   }
 
-  handleShowCard() {
+  handleShowCard(event) {
+    event.preventDefault();
     this.setState({ showCart: true });
   }
 
@@ -30,7 +31,6 @@ class FoodPartyCard extends React.Component {
         <Modal
           show={this.state.showCart}
           onHide={this.handleCloseCard}
-          centerd={true}
           style={{ marginTop: "100px" }}
           size="md"
         >

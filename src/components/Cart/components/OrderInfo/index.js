@@ -1,9 +1,9 @@
 import React from "react";
-import "./styles.css";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
 import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
-import PropTypes from "prop-types";
+import "./styles.css";
 
 class OrderInfo extends React.Component {
   render() {

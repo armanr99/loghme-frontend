@@ -1,12 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
+import API from "../../services/api";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import RestaurantLogo from "./components/RestaurantLogo";
 import RestaurantName from "./components/RestaurantName";
 import RestaurantInfo from "./components/RestaurantInfo";
 import Loading from "../../components/Loading";
-import API from "../../services/api";
-import PropTypes from "prop-types";
 import "./styles.css";
 
 class Restaurant extends React.Component {

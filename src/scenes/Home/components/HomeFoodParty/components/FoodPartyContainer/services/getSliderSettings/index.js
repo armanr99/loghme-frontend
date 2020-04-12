@@ -5,14 +5,14 @@ export default function getSliderSettings(cardsCount) {
     infinite: cardsCount >= 6,
     speed: 500,
     arrows: false,
-    // autoplay: true,
+    autoplay: true,
     slidesToShow: 6,
     responsive: [
       {
         breakpoint: 1600,
         settings: {
           slidesToShow: 5,
-          infinite: cardsCount >= 6,
+          infinite: cardsCount >= 5,
         },
       },
       {
