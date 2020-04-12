@@ -28,7 +28,6 @@ class FoodModalCard extends React.Component {
       this.props.dispatch({ type: "SET_USER", user: user });
       toast.success(success.ADD_TO_CART);
     } catch (err) {
-      console.log(err);
       toast.error(error.INTERNAL);
     }
   }
@@ -44,11 +43,9 @@ class FoodModalCard extends React.Component {
         data: data,
       });
       const newUser = response.data;
-      console.log(newUser);
       this.props.dispatch({ type: "SET_USER", user: newUser });
       toast.success(success.REMOVE_FROM_CART);
     } catch (err) {
-      console.log(err.response);
       toast.error(error.INTERNAL);
     }
   }
