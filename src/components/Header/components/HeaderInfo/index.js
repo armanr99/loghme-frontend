@@ -53,7 +53,9 @@ class HeaderInfo extends React.Component {
           <li className="header-cart flex-center" onClick={this.handleShowCart}>
             <div href="/cart" className="flex-center">
               <span className="cart-counter flex-center">
-                {convertToPersianDigits(this.props.user.cart.items.length)}
+                {this.props.user.cart
+                  ? convertToPersianDigits(this.props.user.cart.items.length)
+                  : "۰"}
               </span>
               <i className="flaticon-smart-cart"></i>
             </div>

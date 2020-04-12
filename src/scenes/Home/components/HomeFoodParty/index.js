@@ -8,7 +8,10 @@ class HomeFoodParty extends React.Component {
     return (
       <div className="home-section flex flex-col justify-content-center align-items-center home-food-party">
         <FoodPartyTitle />
-        <FoodPartyContainer />
+        <FoodPartyContainer
+          user={this.props.user}
+          updateUser={this.props.updateUser}
+        />
       </div>
     );
   }

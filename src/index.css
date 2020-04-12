@@ -119,3 +119,8 @@ i::before {
 .Toastify__toast-body {
   flex: 0 auto;
 }
+
+.modal-content {
+  background: none;
+  border: none;
+}

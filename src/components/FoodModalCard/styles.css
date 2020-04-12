@@ -1,10 +1,9 @@
 .foodparty-modal-card {
-  width: 480px;
+  /* width: 480px; */
   height: 280px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
-  margin-top: 200px;
 }
 
 .foodparty-modal-top {
@@ -106,4 +105,8 @@
   width: 100%;
   color: #686868;
   text-align: right;
+}
+
+.food-item-count-settings i {
+  cursor: pointer;
 }
