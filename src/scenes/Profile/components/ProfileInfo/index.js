@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
 import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class ProfileInfo extends React.Component {
@@ -44,3 +45,13 @@ class ProfileInfo extends React.Component {
 }
 
 export default connect(mapStateToProps)(ProfileInfo);
+
+ProfileInfo.propTypes = {
+  user: PropTypes.shape({
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    phoneNumber: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    credit: PropTypes.number.isRequired,
+  }).isRequired,
+};

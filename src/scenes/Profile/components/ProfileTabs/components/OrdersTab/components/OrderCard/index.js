@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class OrderCard extends React.Component {
@@ -25,3 +26,10 @@ class OrderCard extends React.Component {
 }
 
 export default OrderCard;
+
+OrderCard.propTypes = {
+  index: PropTypes.number.isRequired,
+  order: PropTypes.shape({
+    cart: PropTypes.array.isRequired,
+  }).isRequired,
+};
