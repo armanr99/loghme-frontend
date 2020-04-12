@@ -63,7 +63,7 @@ class FoodModalCard extends React.Component {
             <img src={this.props.food.image} alt="Food" />
           </div>
           <div className="foodparty-modal-food-info flex flex-col align-items-start justify-content-around">
-            <div className="foodparty-modal-info-top">
+            <div className="foodparty-modal-info-top flex">
               <span className="foodparty-modal-name">
                 {this.props.food.name}
               </span>
