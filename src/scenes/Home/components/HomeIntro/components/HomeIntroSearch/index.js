@@ -27,6 +27,7 @@ class HomeIntroSearch extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
+    
     const foodName = this.state.foodName;
     const restaurantName = this.state.restaurantName;
 

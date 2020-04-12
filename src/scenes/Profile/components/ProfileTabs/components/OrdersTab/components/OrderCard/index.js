@@ -20,7 +20,9 @@ class OrderCard extends React.Component {
     this.setState({ showFactor: false });
   }
 
-  handleShowFactor() {
+  handleShowFactor(event) {
+    event.preventDefault();
+    
     this.setState({ showFactor: true });
   }
 

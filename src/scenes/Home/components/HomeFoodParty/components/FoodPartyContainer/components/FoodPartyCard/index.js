@@ -20,7 +20,8 @@ class FoodPartyCard extends React.Component {
     this.setState({ showCart: false });
   }
 
-  handleShowCard() {
+  handleShowCard(event) {
+    event.preventDefault();
     this.setState({ showCart: true });
   }
 

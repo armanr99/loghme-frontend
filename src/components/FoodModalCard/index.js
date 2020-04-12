@@ -16,7 +16,9 @@ class FoodModalCard extends React.Component {
     this.handleDeleteFood = this.handleDeleteFood.bind(this);
   }
 
-  async handleAddFood() {
+  async handleAddFood(event) {
+    event.preventDefault();
+    
     const data = {
       foodName: this.props.food.name,
       restaurantId: this.props.food.restaurant.id,
