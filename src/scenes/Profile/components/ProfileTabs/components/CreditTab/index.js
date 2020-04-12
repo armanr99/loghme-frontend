@@ -5,6 +5,8 @@ import convertToPersianDigits from "../../../../../../services/tools/convertToPe
 import convertToEnglishDigits from "../../../../../../services/tools/convertToEnglishDigits";
 import { error, success } from "../../../../../../services/toastify/configs";
 import API from "../../../../../../services/api";
+import { connect } from "react-redux";
+import mapStateToProps from "../../../../../../services/redux/configs/userStateToProps";
 import "./styles.css";
 
 class CreditTab extends React.Component {
@@ -76,4 +78,4 @@ class CreditTab extends React.Component {
   }
 }
 
-export default CreditTab;
+export default connect(mapStateToProps)(CreditTab);
