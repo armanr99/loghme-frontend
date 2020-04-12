@@ -40,7 +40,6 @@ class OrderCard extends React.Component {
         <Modal
           show={this.state.showFactor}
           onHide={this.handleCloseFactor}
-          centerd={true}
           style={{ marginTop: "100px" }}
           size="lg"
         >

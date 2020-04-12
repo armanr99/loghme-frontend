@@ -30,7 +30,6 @@ class FoodPartyCard extends React.Component {
         <Modal
           show={this.state.showCart}
           onHide={this.handleCloseCard}
-          centerd={true}
           style={{ marginTop: "100px" }}
           size="md"
         >

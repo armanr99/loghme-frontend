@@ -33,7 +33,6 @@ class HeaderInfo extends React.Component {
         <Modal
           show={this.state.showCart}
           onHide={this.handleCloseCart}
-          centerd={true}
           style={{ marginTop: "100px" }}
           size="sm"
         >
