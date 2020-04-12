@@ -2,6 +2,8 @@ import React from "react";
 import Cart from "../../../Cart";
 import Modal from "react-bootstrap/Modal";
 import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
+import { connect } from "react-redux";
+import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
 import "./styles.css";
 
 class HeaderInfo extends React.Component {
@@ -33,14 +35,11 @@ class HeaderInfo extends React.Component {
           style={{ marginTop: "100px" }}
           size="sm"
         >
-          <Cart
-            inRestaurant={false}
-            user={this.props.user}
-            updateUser={this.props.updateUser}
-          />
+          <Cart inRestaurant={false} />
         </Modal>
         <ul>
           <li className="flex-center">
+            {this.props.user.name}
             <a href="/exit" className="header-exit flex-center">
               خروج
             </a>
@@ -66,4 +65,4 @@ class HeaderInfo extends React.Component {
   }
 }
 
-export default HeaderInfo;
+export default connect(mapStateToProps)(HeaderInfo);

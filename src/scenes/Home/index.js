@@ -10,16 +10,10 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Header
-          user={this.props.user}
-          updateUser={this.props.updateUser}
-        />
+        <Header />
         <main className="home">
           <HomeIntro />
-          <HomeFoodParty
-            user={this.props.user}
-            updateUser={this.props.updateUser}
-          />
+          <HomeFoodParty />
           <HomeRestaurants />
         </main>
         <Footer />

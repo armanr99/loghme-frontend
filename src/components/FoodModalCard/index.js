@@ -4,6 +4,8 @@ import getInCartCount from "./services/getInCartCount";
 import API from "../../services/api";
 import { error, success } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
+import { connect } from "react-redux";
+import mapStateToProps from "../../services/redux/configs/userStateToProps";
 import "./styles.css";
 
 class FoodModalCard extends React.Component {
@@ -22,7 +24,7 @@ class FoodModalCard extends React.Component {
     try {
       const response = await API.post("/cart", data);
       const user = response.data;
-      this.props.updateUser(user);
+      this.props.dispatch({ type: "SET_USER", user: user });
       toast.success(success.ADD_TO_CART);
     } catch (err) {
       console.log(err);
@@ -40,8 +42,9 @@ class FoodModalCard extends React.Component {
       const response = await API.delete("/cart", {
         data: data,
       });
-      const user = response.data;
-      this.props.updateUser(user);
+      const newUser = response.data;
+      console.log(newUser);
+      this.props.dispatch({ type: "SET_USER", user: newUser });
       toast.success(success.REMOVE_FROM_CART);
     } catch (err) {
       console.log(err.response);
@@ -113,4 +116,4 @@ class FoodModalCard extends React.Component {
   }
 }
 
-export default FoodModalCard;
+export default connect(mapStateToProps)(FoodModalCard);

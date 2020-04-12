@@ -1,5 +1,14 @@
 const initialState = {
-  user: {},
+        user: {
+        id: 0,
+        credit: 0,
+        firstName: "",
+        lastName: "",
+        phoneNumber: "",
+        email: "",
+        orders: [],
+        cart: { items: [], totalPrice: 0 },
+      },
 };
 
 export default function reducer(state = initialState, action) {

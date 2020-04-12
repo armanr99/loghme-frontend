@@ -1,6 +1,8 @@
 import React from "react";
 import "./styles.css";
 import OrderCard from "./components/OrderCard";
+import { connect } from "react-redux";
+import mapStateToProps from "../../../../../../services/redux/configs/userStateToProps";
 
 class OrdersTab extends React.Component {
   render() {
@@ -19,4 +21,4 @@ class OrdersTab extends React.Component {
   }
 }
 
-export default OrdersTab;
+export default connect(mapStateToProps)(OrdersTab);

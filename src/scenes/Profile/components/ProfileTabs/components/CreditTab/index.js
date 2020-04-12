@@ -41,7 +41,7 @@ class CreditTab extends React.Component {
     try {
       const response = await API.post("/wallet", { amount });
       const user = response.data;
-      this.props.updateUser(user);
+      this.props.dispatch({ type: "SET_USER", user: user });
       toast.success(success.CHARGE);
     } catch (err) {
       toast.error(error.INTERNAL);

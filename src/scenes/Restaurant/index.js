@@ -27,15 +27,11 @@ class Restaurant extends React.Component {
   render() {
     return (
       <div>
-        <Header user={this.props.user} updateUser={this.props.updateUser} />
+        <Header />
         <main className="restaurant">
           <RestaurantLogo restaurant={this.state.restaurant} />
           <RestaurantName restaurant={this.state.restaurant} />
-          <RestaurantInfo
-            restaurant={this.state.restaurant}
-            user={this.props.user}
-            updateUser={this.props.updateUser}
-          />
+          <RestaurantInfo restaurant={this.state.restaurant} />
         </main>
         <Footer />
       </div>

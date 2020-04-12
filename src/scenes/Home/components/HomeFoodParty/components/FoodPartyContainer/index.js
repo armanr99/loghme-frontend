@@ -27,8 +27,6 @@ class FoodPartyContainer extends React.Component {
       <FoodPartyCard
         partyFood={partyFood}
         key={partyFood.name + partyFood.restaurant.id}
-        user={this.props.user}
-        updateUser={this.props.updateUser}
       />
     ));
     const sliderSettings = getSliderSettings(foodPartyCards.length);

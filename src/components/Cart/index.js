@@ -2,6 +2,8 @@ import React from "react";
 import "./styles.css";
 import CartItemCard from "./components/CartItemCard";
 import OrderInfo from "./components/OrderInfo";
+import { connect } from "react-redux";
+import mapStateToProps from "../../services/redux/configs/userStateToProps";
 
 class Cart extends React.Component {
   render() {
@@ -17,7 +19,7 @@ class Cart extends React.Component {
       >
         <p>سبد خرید</p>
         <div className="cart-items">{cartItemCards}</div>
-        <OrderInfo user={this.props.user} />
+        <OrderInfo />
         <button className="loghme-button loghme-button-style">
           تأیید نهایی
         </button>
@@ -26,4 +28,4 @@ class Cart extends React.Component {
   }
 }
 
-export default Cart;
+export default connect(mapStateToProps)(Cart);
