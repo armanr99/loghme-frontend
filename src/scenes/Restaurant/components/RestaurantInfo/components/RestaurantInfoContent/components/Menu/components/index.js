@@ -1,11 +1,40 @@
 import React from "react";
 import "./styles.css";
+import Modal from "react-bootstrap/Modal";
+import FoodModalCard from "../../../../../../../../../components/FoodModalCard";
 import convertToPersianDigits from "../../../../../../../../../services/tools/convertToPersianDigits";
 
 class MenuCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showCart: false,
+    };
+
+    this.handleShowCard = this.handleShowCard.bind(this);
+    this.handleCloseCard = this.handleCloseCard.bind(this);
+  }
+
+  handleCloseCard() {
+    this.setState({ showCart: false });
+  }
+
+  handleShowCard() {
+    this.setState({ showCart: true });
+  }
+
   render() {
     return (
       <div className="loghme-card">
+        <Modal
+          show={this.state.showCart}
+          onHide={this.handleCloseCard}
+          centerd={true}
+          style={{ marginTop: "100px" }}
+          size="md"
+        >
+          <FoodModalCard food={this.props.food} />
+        </Modal>
         <div className="menu-info flex-center flex-col">
           <div className="menu-img-container flex-center">
             <img src={this.props.food.image} alt="Food" />
@@ -19,10 +48,13 @@ class MenuCard extends React.Component {
             <span>{convertToPersianDigits(this.props.food.price)} تومان</span>
           </div>
         </div>
-        <div className="menu-button-container flex-center">
-          <a href="/menu" className="loghme-button-style">
+        <div className="loghme-button menu-button-container flex-center">
+          <button
+            className="loghme-button loghme-button-style"
+            onClick={this.handleShowCard}
+          >
             افزودن به سبد خرید
-          </a>
+          </button>
         </div>
       </div>
     );

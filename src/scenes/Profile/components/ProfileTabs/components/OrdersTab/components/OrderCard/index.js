@@ -9,7 +9,7 @@ class OrderCard extends React.Component {
           <span>{this.props.index}</span>
         </div>
         <div className="col-lg-6 col-5 profile-order-restaurant-name flex-center">
-          <span>{this.props.order.cart.restaurant.name}</span>
+          <span>{this.props.order.cart[0].restaurant.name}</span>
         </div>
         <div className="col-lg-5 col-5 delivery-button-container flex-center">
           <a

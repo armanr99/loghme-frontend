@@ -1,15 +1,18 @@
 import React from "react";
-import logo from "../../assets/images/logo.png"
+import logo from "../../assets/images/logo.png";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 class Login extends React.Component {
   render() {
     return (
       <div className="login-body">
         <div className="auth flex-center flex-col">
-          <div className="auth-logo">
-            <img src={logo} alt="Logo" />
-          </div>
+          <Link to="/">
+            <div className="auth-logo">
+              <img src={logo} alt="Logo" />
+            </div>
+          </Link>
           <input
             type="email"
             name="email"
@@ -29,9 +32,9 @@ class Login extends React.Component {
           />
           <p>
             قبلا ثبت‌نام نکرده‌اید؟{" "}
-            <a href="./signup.html" className="auth-link">
+            <Link to="/signup" className="auth-link">
               ثبت‌نام
-            </a>
+            </Link>
           </p>
         </div>
       </div>

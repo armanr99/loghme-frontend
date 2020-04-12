@@ -8,7 +8,7 @@ class HomeRestaurants extends React.Component {
     return (
       <div className="home-section flex flex-col justify-content-center align-items-center home-restaurants">
         <SectionTitle title="رستوران‌ها" />
-        <RestaurantsContainer />
+        <RestaurantsContainer restaurants={this.props.restaurants} />
       </div>
     );
   }

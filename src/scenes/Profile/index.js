@@ -6,22 +6,13 @@ import ProfileTabs from "./components/ProfileTabs";
 import API from "../../services/api";
 
 class Profile extends React.Component {
-  async componentDidMount() {
-    const response = await API.get("/user");
-    const user = response.data;
-    this.props.updateUser(user);
-  }
-
   render() {
     return (
       <div>
-        <Header user={this.props.user} updateUser={this.props.updateUser} />
+        <Header />
         <main>
-          <ProfileInfo user={this.props.user} />
-          <ProfileTabs
-            user={this.props.user}
-            updateUser={this.props.updateUser}
-          />
+          <ProfileInfo />
+          <ProfileTabs />
         </main>
         <Footer />
       </div>

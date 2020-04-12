@@ -1,15 +1,18 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 class Signup extends React.Component {
   render() {
     return (
       <div className="signup-body">
         <div className="auth flex-center flex-col">
-          <div className="auth-logo">
-            <img src={logo} alt="Logo" />
-          </div>
+          <Link to="/">
+            <div className="auth-logo">
+              <img src={logo} alt="Logo" />
+            </div>
+          </Link>
           <input
             type="text"
             name="name"
@@ -35,9 +38,9 @@ class Signup extends React.Component {
           />
           <p>
             قبلا ثبت‌نام کرده‌اید؟{" "}
-            <a href="./login.html" className="auth-link login-link">
+            <Link to="/login" className="auth-link login-link">
               ورود
-            </a>
+            </Link>
           </p>
         </div>
       </div>

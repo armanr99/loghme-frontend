@@ -1,5 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
 import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
+import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
 import "./styles.css";
 
 class ProfileInfo extends React.Component {
@@ -41,4 +43,4 @@ class ProfileInfo extends React.Component {
   }
 }
 
-export default ProfileInfo;
+export default connect(mapStateToProps)(ProfileInfo);

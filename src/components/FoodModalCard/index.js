@@ -4,6 +4,8 @@ import getInCartCount from "./services/getInCartCount";
 import API from "../../services/api";
 import { error, success } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
+import { connect } from "react-redux";
+import mapStateToProps from "../../services/redux/configs/userStateToProps";
 import "./styles.css";
 
 class FoodModalCard extends React.Component {
@@ -22,7 +24,7 @@ class FoodModalCard extends React.Component {
     try {
       const response = await API.post("/cart", data);
       const user = response.data;
-      this.props.updateUser(user);
+      this.props.dispatch({ type: "SET_USER", user: user });
       toast.success(success.ADD_TO_CART);
     } catch (err) {
       console.log(err);
@@ -40,8 +42,9 @@ class FoodModalCard extends React.Component {
       const response = await API.delete("/cart", {
         data: data,
       });
-      const user = response.data;
-      this.props.updateUser(user);
+      const newUser = response.data;
+      console.log(newUser);
+      this.props.dispatch({ type: "SET_USER", user: newUser });
       toast.success(success.REMOVE_FROM_CART);
     } catch (err) {
       console.log(err.response);
@@ -50,6 +53,8 @@ class FoodModalCard extends React.Component {
   }
 
   render() {
+    const countVisibility = this.props.isPartyFood ? "" : "foodparty-count-invisible";
+
     return (
       <div className="foodparty-modal-card flex flex-col justify-content-around align-items-center">
         <div className="foodparty-modal-top flex justify-content-center align-items-end">
@@ -60,7 +65,7 @@ class FoodModalCard extends React.Component {
             <img src={this.props.food.image} alt="Food" />
           </div>
           <div className="foodparty-modal-food-info flex flex-col align-items-start justify-content-around">
-            <div className="foodparty-modal-info-top">
+            <div className="foodparty-modal-info-top flex">
               <span className="foodparty-modal-name">
                 {this.props.food.name}
               </span>
@@ -71,9 +76,11 @@ class FoodModalCard extends React.Component {
               <p>{this.props.food.description}</p>
             </div>
             <div className="foodparty-modal-price flex justify-content-between">
-              <span className="old-price">
-                {convertToPersianDigits(this.props.food.oldPrice)}
-              </span>
+              {this.props.isPartyFood && (
+                <span className="old-price">
+                  {convertToPersianDigits(this.props.food.oldPrice)}
+                </span>
+              )}
               <span className="new-price">
                 {convertToPersianDigits(this.props.food.price)} تومان
               </span>
@@ -81,8 +88,11 @@ class FoodModalCard extends React.Component {
           </div>
         </div>
         <div className="foodparty-modal-bottom flex justify-content-between align-items-center">
-          <span className="loghme-button-style foodparty-button-info foodparty-count">
-            موجودی: {convertToPersianDigits(this.props.food.count)}
+          <span className={`loghme-button-style foodparty-button-info foodparty-count ${countVisibility}`}>
+            موجودی:{" "}
+            {this.props.isPartyFood
+              ? convertToPersianDigits(this.props.food.count)
+              : 0}
           </span>
           <div className="food-item-count-settings flex justify-content-around align-items-center">
             <i
@@ -113,4 +123,4 @@ class FoodModalCard extends React.Component {
   }
 }
 
-export default FoodModalCard;
+export default connect(mapStateToProps)(FoodModalCard);
