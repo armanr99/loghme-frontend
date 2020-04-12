@@ -3,7 +3,6 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ProfileInfo from "./components/ProfileInfo";
 import ProfileTabs from "./components/ProfileTabs";
-import API from "../../services/api";
 
 class Profile extends React.Component {
   render() {

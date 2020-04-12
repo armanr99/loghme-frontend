@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 import Cart from "../../../../../../components/Cart";
 import Menu from "./components/Menu";
+import PropTypes from "prop-types";
 
 class RestaurantInfoContent extends React.Component {
   render() {
@@ -21,3 +22,7 @@ class RestaurantInfoContent extends React.Component {
 }
 
 export default RestaurantInfoContent;
+
+RestaurantInfoContent.propTypes = {
+  restaurant: PropTypes.object.isRequired,
+};

@@ -1,7 +1,7 @@
 import React from "react";
 import SectionTitle from "../../../../../../components/SectionTitle";
-import API from "../../../../../../services/api";
 import convertToPersianDigits from "../../../../../../services/tools/convertToPersianDigits";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class FoodPartyTitle extends React.Component {
@@ -22,3 +22,7 @@ class FoodPartyTitle extends React.Component {
 }
 
 export default FoodPartyTitle;
+
+FoodPartyTitle.propTypes = {
+  remainingSeconds: PropTypes.number.isRequired,
+};

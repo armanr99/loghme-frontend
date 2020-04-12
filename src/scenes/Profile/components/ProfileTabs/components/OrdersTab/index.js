@@ -3,6 +3,7 @@ import "./styles.css";
 import OrderCard from "./components/OrderCard";
 import { connect } from "react-redux";
 import mapStateToProps from "../../../../../../services/redux/configs/userStateToProps";
+import PropTypes from "prop-types";
 
 class OrdersTab extends React.Component {
   render() {
@@ -22,3 +23,9 @@ class OrdersTab extends React.Component {
 }
 
 export default connect(mapStateToProps)(OrdersTab);
+
+OrdersTab.propTypes = {
+  user: PropTypes.shape({
+    orders: PropTypes.array.isRequired
+  }).isRequired
+};

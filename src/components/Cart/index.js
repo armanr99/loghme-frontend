@@ -7,6 +7,7 @@ import mapStateToProps from "../../services/redux/configs/userStateToProps";
 import { error, success } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
 import API from "../../services/api";
+import PropTypes from "prop-types";
 
 class Cart extends React.Component {
   constructor(props) {
@@ -15,8 +16,7 @@ class Cart extends React.Component {
   }
 
   async handleFinalize() {
-    if(this.props.user.cart.items.length === 0)
-    {
+    if (this.props.user.cart.items.length === 0) {
       toast.error(error.EMPTY_CARD);
       return;
     }
@@ -57,3 +57,10 @@ class Cart extends React.Component {
 }
 
 export default connect(mapStateToProps)(Cart);
+
+Cart.propTypes = {
+  inRestaurant: PropTypes.bool,
+  user: PropTypes.shape({
+    cart: PropTypes.shape({ items: PropTypes.array.isRequired }).isRequired,
+  }).isRequired,
+};

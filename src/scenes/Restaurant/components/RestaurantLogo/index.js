@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class RestaurantLogo extends React.Component {
@@ -14,3 +15,9 @@ class RestaurantLogo extends React.Component {
 }
 
 export default RestaurantLogo;
+
+RestaurantLogo.propTypes = {
+  restaurant: PropTypes.shape({
+    logo: PropTypes.string.isRequired,
+  }).isRequired,
+};
