@@ -33,7 +33,7 @@ class FoodPartyCard extends React.Component {
           style={{ marginTop: "100px" }}
           size="md"
         >
-          <FoodModalCard food={this.props.partyFood} />
+          <FoodModalCard food={this.props.partyFood} isPartyFood={true} />
         </Modal>
         <div className="foodparty-food-info flex flex-col">
           <div className="foodparty-food-info-top flex flex-center">

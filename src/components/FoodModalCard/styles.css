@@ -45,8 +45,8 @@
   padding-bottom: 4px;
 }
 
-.foodparty-count {
-  /* visibility: hidden; */
+.foodparty-count-invisible {
+  visibility: hidden;
 }
 
 .food-item-count-settings {

@@ -53,6 +53,8 @@ class FoodModalCard extends React.Component {
   }
 
   render() {
+    const countVisibility = this.props.isPartyFood ? "" : "foodparty-count-invisible";
+
     return (
       <div className="foodparty-modal-card flex flex-col justify-content-around align-items-center">
         <div className="foodparty-modal-top flex justify-content-center align-items-end">
@@ -74,9 +76,11 @@ class FoodModalCard extends React.Component {
               <p>{this.props.food.description}</p>
             </div>
             <div className="foodparty-modal-price flex justify-content-between">
-              <span className="old-price">
-                {convertToPersianDigits(this.props.food.oldPrice)}
-              </span>
+              {this.props.isPartyFood && (
+                <span className="old-price">
+                  {convertToPersianDigits(this.props.food.oldPrice)}
+                </span>
+              )}
               <span className="new-price">
                 {convertToPersianDigits(this.props.food.price)} تومان
               </span>
@@ -84,8 +88,11 @@ class FoodModalCard extends React.Component {
           </div>
         </div>
         <div className="foodparty-modal-bottom flex justify-content-between align-items-center">
-          <span className="loghme-button-style foodparty-button-info foodparty-count">
-            موجودی: {convertToPersianDigits(this.props.food.count)}
+          <span className={`loghme-button-style foodparty-button-info foodparty-count ${countVisibility}`}>
+            موجودی:{" "}
+            {this.props.isPartyFood
+              ? convertToPersianDigits(this.props.food.count)
+              : 0}
           </span>
           <div className="food-item-count-settings flex justify-content-around align-items-center">
             <i
