@@ -1,11 +1,11 @@
 .foodparty-container {
-    width: 100%;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.41);
-    padding: 20px 0;
+  width: 100%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.41);
+  padding: 20px 0;
 }
 
 .slick-slide div:first-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import PropTypes from "prop-types";
-import "./styles.css";
 import OrderInfo from "./components/OrderInfo";
+import "./styles.css";
 
 class OrderCard extends React.Component {
   constructor(props) {

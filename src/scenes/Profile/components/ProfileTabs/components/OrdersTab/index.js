@@ -1,9 +1,9 @@
 import React from "react";
-import "./styles.css";
-import OrderCard from "./components/OrderCard";
-import { connect } from "react-redux";
-import mapStateToProps from "../../../../../../services/redux/configs/userStateToProps";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import OrderCard from "./components/OrderCard";
+import mapStateToProps from "../../../../../../services/redux/configs/userStateToProps";
+import "./styles.css";
 
 class OrdersTab extends React.Component {
   render() {

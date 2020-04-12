@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "../../assets/images/logo.png";
-import "./styles.css";
 import { Link } from "react-router-dom";
-import validateEmail from "../../services/tools/validateEmail";
 import { error } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
+import logo from "../../assets/images/logo.png";
+import validateEmail from "../../services/tools/validateEmail";
+import "./styles.css";
 
 class Login extends React.Component {
   constructor(props) {

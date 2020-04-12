@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import FoodPartyContainer from "./components/FoodPartyContainer";
 import FoodPartyTitle from "./components/FoodPartyTitle";
-import PropTypes from "prop-types";
 import "./styles.css";
 
 class HomeFoodParty extends React.Component {

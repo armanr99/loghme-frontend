@@ -1,8 +1,8 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
+import PropTypes from "prop-types";
 import FoodModalCard from "../../../../.../../../../../../components/FoodModalCard";
 import convertToPersianDigits from "../../../../../../../../services/tools/convertToPersianDigits";
-import PropTypes from "prop-types";
 import "./styles.css";
 
 class FoodPartyCard extends React.Component {

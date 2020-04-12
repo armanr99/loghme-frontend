@@ -1,8 +1,8 @@
 import React from "react";
-import "./styles.css";
+import PropTypes from "prop-types";
 import Cart from "../../../../../../components/Cart";
 import Menu from "./components/Menu";
-import PropTypes from "prop-types";
+import "./styles.css";
 
 class RestaurantInfoContent extends React.Component {
   render() {

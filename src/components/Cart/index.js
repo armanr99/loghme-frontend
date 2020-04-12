@@ -1,13 +1,13 @@
 import React from "react";
-import "./styles.css";
-import CartItemCard from "./components/CartItemCard";
 import OrderInfo from "./components/OrderInfo";
+import CartItemCard from "./components/CartItemCard";
+import API from "../../services/api";
+import { toast } from "react-toastify";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import mapStateToProps from "../../services/redux/configs/userStateToProps";
 import { error, success } from "../../services/toastify/configs";
-import { toast } from "react-toastify";
-import API from "../../services/api";
-import PropTypes from "prop-types";
+import "./styles.css";
 
 class Cart extends React.Component {
   constructor(props) {

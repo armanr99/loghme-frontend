@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
 import Home from "./scenes/Home";
-import Restaurant from "./scenes/Restaurant";
 import Profile from "./scenes/Profile";
 import Signup from "./scenes/Signup";
 import Login from "./scenes/Login";
+import Restaurant from "./scenes/Restaurant";
 import API from "./services/api";
-import { connect } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import mapStateToProps from "./services/redux/configs/userStateToProps";
 import "react-toastify/dist/ReactToastify.css";

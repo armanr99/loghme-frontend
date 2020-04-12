@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import SectionTitle from "../../../../../../components/SectionTitle";
 import convertToPersianDigits from "../../../../../../services/tools/convertToPersianDigits";
-import PropTypes from "prop-types";
 import "./styles.css";
 
 class FoodPartyTitle extends React.Component {

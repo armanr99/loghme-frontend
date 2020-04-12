@@ -1,9 +1,8 @@
-import React from "react";
-import "./styles.css";
+import React from "react";import PropTypes from "prop-types";
 import Modal from "react-bootstrap/Modal";
 import FoodModalCard from "../../../../../../../../../components/FoodModalCard";
 import convertToPersianDigits from "../../../../../../../../../services/tools/convertToPersianDigits";
-import PropTypes from "prop-types";
+import "./styles.css";
 
 class MenuCard extends React.Component {
   constructor(props) {

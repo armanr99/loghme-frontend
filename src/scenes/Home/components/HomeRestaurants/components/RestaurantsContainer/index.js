@@ -1,6 +1,6 @@
 import React from "react";
-import RestaurantCard from "./components/RestaurantCard";
 import PropTypes from "prop-types";
+import RestaurantCard from "./components/RestaurantCard";
 
 class RestaurantsContainer extends React.Component {
   render() {
@@ -16,5 +16,5 @@ class RestaurantsContainer extends React.Component {
 export default RestaurantsContainer;
 
 RestaurantsContainer.propTypes = {
-  restaurants: PropTypes.array.isRequired
-}
+  restaurants: PropTypes.array.isRequired,
+};

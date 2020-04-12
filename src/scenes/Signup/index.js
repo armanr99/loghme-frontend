@@ -1,10 +1,10 @@
 import React from "react";
-import logo from "../../assets/images/logo.png";
-import "./styles.css";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import logo from "../../assets/images/logo.png";
 import validateEmail from "../../services/tools/validateEmail";
 import { error } from "../../services/toastify/configs";
-import { toast } from "react-toastify";
+import "./styles.css";
 
 class Signup extends React.Component {
   constructor(props) {
@@ -45,7 +45,10 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="signup-body">
-        <form className="auth flex-center flex-col" onSubmit={this.handleSubmit}>
+        <form
+          className="auth flex-center flex-col"
+          onSubmit={this.handleSubmit}
+        >
           <Link to="/">
             <div className="auth-logo">
               <img src={logo} alt="Logo" />

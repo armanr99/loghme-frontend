@@ -1,12 +1,12 @@
 import React from "react";
-import convertToPersianDigits from "../../services/tools/convertToPersianDigits";
-import getInCartCount from "./services/getInCartCount";
-import API from "../../services/api";
-import { error, success } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
-import mapStateToProps from "../../services/redux/configs/userStateToProps";
 import PropTypes from "prop-types";
+import API from "../../services/api";
+import mapStateToProps from "../../services/redux/configs/userStateToProps";
+import convertToPersianDigits from "../../services/tools/convertToPersianDigits";
+import { error, success } from "../../services/toastify/configs";
+import getInCartCount from "./services/getInCartCount";
 import "./styles.css";
 
 class FoodModalCard extends React.Component {
@@ -142,6 +142,6 @@ FoodModalCard.propTypes = {
     }).isRequired,
   }).isRequired,
   user: PropTypes.shape({
-    cart: PropTypes.object.isRequired
+    cart: PropTypes.object.isRequired,
   }).isRequired,
 };
