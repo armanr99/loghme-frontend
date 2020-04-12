@@ -5,6 +5,7 @@ import convertToPersianDigits from "../../../../services/tools/convertToPersianD
 import { connect } from "react-redux";
 import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 class HeaderInfo extends React.Component {
   constructor(props) {
@@ -40,14 +41,14 @@ class HeaderInfo extends React.Component {
         <ul>
           <li className="flex-center">
             {this.props.user.name}
-            <a href="/exit" className="header-exit flex-center">
+            <Link to="/exit" className="header-exit flex-center">
               خروج
-            </a>
+            </Link>
           </li>
           <li className="flex-center">
-            <a href="./profile.html" className="flex-center">
+            <Link to="/profile" className="flex-center">
               حساب کاربری
-            </a>
+            </Link>
           </li>
           <li className="header-cart flex-center" onClick={this.handleShowCart}>
             <div href="/cart" className="flex-center">
