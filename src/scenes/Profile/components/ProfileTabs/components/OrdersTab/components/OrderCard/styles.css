@@ -62,3 +62,7 @@
     height: 90px;
   }
 }
+
+.table > th {
+  background-color: #ebebeb;
+}
