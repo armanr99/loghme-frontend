@@ -3,6 +3,7 @@ import "./styles.css";
 import Modal from "react-bootstrap/Modal";
 import FoodModalCard from "../../../../../../../../../components/FoodModalCard";
 import convertToPersianDigits from "../../../../../../../../../services/tools/convertToPersianDigits";
+import PropTypes from "prop-types";
 
 class MenuCard extends React.Component {
   constructor(props) {
@@ -62,3 +63,12 @@ class MenuCard extends React.Component {
 }
 
 export default MenuCard;
+
+MenuCard.propTypes = {
+  food: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    popularity: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
+};

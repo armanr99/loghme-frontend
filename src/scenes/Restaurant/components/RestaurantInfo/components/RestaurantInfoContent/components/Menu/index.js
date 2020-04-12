@@ -1,5 +1,6 @@
 import React from "react";
 import MenuCard from "./components";
+import PropTypes from "prop-types";
 
 class Menu extends React.Component {
   render() {
@@ -13,3 +14,7 @@ class Menu extends React.Component {
 }
 
 export default Menu;
+
+Menu.propTypes = {
+  restaurant: PropTypes.shape({ menu: PropTypes.array.isRequired }).isRequired,
+};

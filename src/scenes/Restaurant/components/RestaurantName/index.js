@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class RestaurantName extends React.Component {
@@ -12,3 +13,7 @@ class RestaurantName extends React.Component {
 }
 
 export default RestaurantName;
+
+RestaurantName.propTypes = {
+  restaurant: PropTypes.shape({ name: PropTypes.string.isRequired }).isRequired,
+};

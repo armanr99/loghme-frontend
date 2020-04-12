@@ -6,6 +6,7 @@ import RestaurantName from "./components/RestaurantName";
 import RestaurantInfo from "./components/RestaurantInfo";
 import Loading from "../../components/Loading";
 import API from "../../services/api";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class Restaurant extends React.Component {
@@ -47,3 +48,11 @@ class Restaurant extends React.Component {
 }
 
 export default Restaurant;
+
+Restaurant.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }),
+};

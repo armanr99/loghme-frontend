@@ -1,6 +1,7 @@
 import React from "react";
 import RestaurantInfoTitle from "./components/RestaurantInfoTitle";
 import RestaurantInfoContent from "./components/RestaurantInfoContent";
+import PropTypes from "prop-types";
 
 class RestaurantInfo extends React.Component {
   render() {
@@ -14,3 +15,7 @@ class RestaurantInfo extends React.Component {
 }
 
 export default RestaurantInfo;
+
+RestaurantInfo.propTypes = {
+  restaurant: PropTypes.object.isRequired,
+};
