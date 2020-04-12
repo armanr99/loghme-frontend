@@ -6,6 +6,7 @@ import { error, success } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
 import mapStateToProps from "../../services/redux/configs/userStateToProps";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class FoodModalCard extends React.Component {
@@ -53,7 +54,9 @@ class FoodModalCard extends React.Component {
   }
 
   render() {
-    const countVisibility = this.props.isPartyFood ? "" : "foodparty-count-invisible";
+    const countVisibility = this.props.isPartyFood
+      ? ""
+      : "foodparty-count-invisible";
 
     return (
       <div className="foodparty-modal-card flex flex-col justify-content-around align-items-center">
@@ -88,7 +91,9 @@ class FoodModalCard extends React.Component {
           </div>
         </div>
         <div className="foodparty-modal-bottom flex justify-content-between align-items-center">
-          <span className={`loghme-button-style foodparty-button-info foodparty-count ${countVisibility}`}>
+          <span
+            className={`loghme-button-style foodparty-button-info foodparty-count ${countVisibility}`}
+          >
             موجودی:{" "}
             {this.props.isPartyFood
               ? convertToPersianDigits(this.props.food.count)
@@ -124,3 +129,22 @@ class FoodModalCard extends React.Component {
 }
 
 export default connect(mapStateToProps)(FoodModalCard);
+
+FoodModalCard.propTypes = {
+  isPartyFood: PropTypes.bool,
+  food: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    popularity: PropTypes.number.isRequired,
+    count: PropTypes.number,
+    oldPrice: PropTypes.number,
+    price: PropTypes.number.isRequired,
+    restaurant: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  user: PropTypes.shape({
+    cart: PropTypes.object.isRequired
+  }).isRequired,
+};

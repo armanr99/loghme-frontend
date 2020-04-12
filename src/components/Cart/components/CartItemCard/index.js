@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import API from "../../../../services/api";
 import { connect } from "react-redux";
 import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class CartItemCard extends React.Component {
@@ -81,3 +82,16 @@ class CartItemCard extends React.Component {
 }
 
 export default connect(mapStateToProps)(CartItemCard);
+
+CartItemCard.propTypes = {
+  cartItem: PropTypes.shape({
+    food: PropTypes.shape({
+      name: PropTypes.isRequired,
+      price: PropTypes.number.isRequired,
+      restaurant: PropTypes.shape({
+        id: PropTypes.string.isRequired
+      }).isRequired,
+    }).isRequired,
+    count: PropTypes.number.isRequired
+  }).isRequired
+}

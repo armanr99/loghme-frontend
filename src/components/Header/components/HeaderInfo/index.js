@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
 import "./styles.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class HeaderInfo extends React.Component {
   constructor(props) {
@@ -40,7 +41,6 @@ class HeaderInfo extends React.Component {
         </Modal>
         <ul>
           <li className="flex-center">
-            {this.props.user.name}
             <Link to="/exit" className="header-exit flex-center">
               خروج
             </Link>
@@ -67,3 +67,11 @@ class HeaderInfo extends React.Component {
 }
 
 export default connect(mapStateToProps)(HeaderInfo);
+
+HeaderInfo.propTypes = {
+  user: PropTypes.shape({
+    cart: PropTypes.shape({
+      items: PropTypes.array.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
