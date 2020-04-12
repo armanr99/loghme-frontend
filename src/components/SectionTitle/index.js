@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class SectionTitle extends React.Component {
@@ -18,3 +19,9 @@ class SectionTitle extends React.Component {
 }
 
 export default SectionTitle;
+
+SectionTitle.propTypes = {
+  className: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.object
+}

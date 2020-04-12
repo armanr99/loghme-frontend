@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import FoodModalCard from "../../../../.../../../../../../components/FoodModalCard";
 import convertToPersianDigits from "../../../../../../../../services/tools/convertToPersianDigits";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class FoodPartyCard extends React.Component {
@@ -84,3 +85,15 @@ class FoodPartyCard extends React.Component {
 }
 
 export default FoodPartyCard;
+
+FoodPartyCard.propTypes = {
+  partyFood: PropTypes.shape({
+    restaurant: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    count: PropTypes.number.isRequired,
+    popularity: PropTypes.number.isRequired,
+  }).isRequired,
+};

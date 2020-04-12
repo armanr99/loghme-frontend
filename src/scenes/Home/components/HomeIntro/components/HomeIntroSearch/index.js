@@ -12,7 +12,6 @@ class HomeIntroSearch extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  // TODO: Use General Inputs 
   handleInputChange(event) {
     const target = event.target;
     const value = target.value;

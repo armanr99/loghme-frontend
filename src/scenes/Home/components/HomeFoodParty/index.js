@@ -1,6 +1,7 @@
 import React from "react";
 import FoodPartyContainer from "./components/FoodPartyContainer";
 import FoodPartyTitle from "./components/FoodPartyTitle";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 class HomeFoodParty extends React.Component {
@@ -15,3 +16,8 @@ class HomeFoodParty extends React.Component {
 }
 
 export default HomeFoodParty;
+
+HomeFoodParty.propTypes = {
+  remainingSeconds: PropTypes.number.isRequired,
+  partyFoods: PropTypes.array.isRequired,
+};
