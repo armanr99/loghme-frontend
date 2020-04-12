@@ -4,8 +4,33 @@ import CartItemCard from "./components/CartItemCard";
 import OrderInfo from "./components/OrderInfo";
 import { connect } from "react-redux";
 import mapStateToProps from "../../services/redux/configs/userStateToProps";
+import { error, success } from "../../services/toastify/configs";
+import { toast } from "react-toastify";
+import API from "../../services/api";
 
 class Cart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleFinalize = this.handleFinalize.bind(this);
+  }
+
+  async handleFinalize() {
+    if(this.props.user.cart.items.length === 0)
+    {
+      toast.error(error.EMPTY_CARD);
+      return;
+    }
+
+    try {
+      const response = await API.post("/cart/order");
+      const user = response.data;
+      this.props.dispatch({ type: "SET_USER", user: user });
+      toast.success(success.FINALIZE_ORDER);
+    } catch (err) {
+      toast.error(error.INTERNAL);
+    }
+  }
+
   render() {
     const restaurantCss = this.props.inRestaurant ? "restaurant-page-cart" : "";
     const cartItems = this.props.user.cart.items;
@@ -20,7 +45,10 @@ class Cart extends React.Component {
         <p>سبد خرید</p>
         <div className="cart-items">{cartItemCards}</div>
         <OrderInfo />
-        <button className="loghme-button loghme-button-style">
+        <button
+          className="loghme-button loghme-button-style"
+          onClick={this.handleFinalize}
+        >
           تأیید نهایی
         </button>
       </div>
