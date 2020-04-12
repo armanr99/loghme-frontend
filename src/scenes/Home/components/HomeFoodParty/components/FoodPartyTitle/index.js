@@ -12,7 +12,7 @@ class FoodPartyTitle extends React.Component {
 
     return (
       <SectionTitle title="جشن غذا!">
-        <p class="time-remaining">
+        <p className="time-remaining">
           زمان باقی‌مانده: {convertToPersianDigits(remainingMinutes)}:
           {convertToPersianDigits(remainingSecondsMod)}
         </p>
