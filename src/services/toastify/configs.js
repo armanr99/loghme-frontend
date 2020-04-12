@@ -1,7 +1,8 @@
 export const error = {
   EMPTY_FIELD: "تمام فیلد‌های ورودی نیازمند پرشدن هستند",
   EMPTY_CARD: "سبد خرید خالی است",
-  INTERNAL: "خطای داخلی"
+  INTERNAL: "خطای داخلی",
+  EMAIL: "فرمت ایمیل اشتباه است"
 };
 
 export const success = {

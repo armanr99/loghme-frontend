@@ -51,9 +51,15 @@
   margin: 5px 0;
 }
 
-.auth input[type="submit"] {
+.auth button {
   font-size: 1.2em;
-  padding: 10px 20px;
+  padding: 8px 20px;
+  margin-top: 2px;
+  width: 100%;
+}
+
+.auth input {
+  direction: ltr;
 }
 
 .auth p {
