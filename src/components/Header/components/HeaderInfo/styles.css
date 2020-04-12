@@ -1,0 +1,23 @@
+.header-exit {
+  color: var(--pastel-red-color) !important;
+}
+
+.header-cart {
+  width: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-counter {
+  font-size: 0.6em;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  color: white;
+  background: var(--med-turquoise-color);
+  border: 1px solid #31a4b7;
+  padding-top: 1px;
+  position: absolute;
+  top: 20%;
+  right: 0;
+}

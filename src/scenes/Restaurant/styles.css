@@ -1,0 +1,21 @@
+.restaurant-bottom {
+  margin-bottom: 20px;
+}
+
+.restaurant-menu {
+  border-right: dashed 3px #c4d9c4;
+}
+
+@media (max-width: 767.98px) {
+  .restaurant-cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .restaurant-menu {
+    border-right: none;
+    border-bottom: dashed 3px #c4d9c4;
+  }
+}

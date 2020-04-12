@@ -1,0 +1,38 @@
+.restaurant-cart {
+  padding: 15px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.41);
+  position: sticky;
+  top: 70px;
+  font-size: 1.2em;
+}
+
+.restaurant-page-cart {
+  margin: 12px;
+  width: 90%;
+}
+
+.restaurant-cart > p:first-child {
+  font-weight: bold;
+  padding-bottom: 1px;
+  border-bottom: 2px solid var(--gray-color);
+  margin-bottom: 2px;
+}
+
+.restaurant-cart button:last-child {
+  background-color: var(--med-turquoise-color);
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cart-items {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  border: 2.5px dashed #b7b7b7;
+  border-radius: 25px;
+  padding: 20px;
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+.login-body {
+  background: rgb(35, 85, 93);
+  background: linear-gradient(
+    90deg,
+    rgba(35, 85, 93, 1) 0%,
+    rgba(207, 100, 100, 1) 100%
+  );
+  min-height: 100vh;
+  margin-top: -60px;
+  margin-bottom: -60px;
+}
+
+.login-submit {
+  background-color: var(--pastel-red-color) !important;
+  color: white !important;
+}
