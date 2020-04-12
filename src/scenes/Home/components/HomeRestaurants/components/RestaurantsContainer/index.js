@@ -1,23 +1,9 @@
 import React from "react";
 import RestaurantCard from "./components/RestaurantCard";
-import API from "../../../../../../services/api";
 
 class RestaurantsContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      restaurants: [],
-    };
-  }
-
-  async componentDidMount() {
-    const response = await API.get("/restaurants");
-    const restaurants = response.data.restaurants;
-    this.setState({ restaurants });
-  }
-
   render() {
-    const restaurants = this.state.restaurants;
+    const restaurants = this.props.restaurants;
     const restaurantCards = restaurants.map((restaurant) => (
       <RestaurantCard restaurant={restaurant} key={restaurant.id} />
     ));
