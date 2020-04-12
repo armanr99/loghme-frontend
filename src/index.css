@@ -111,3 +111,11 @@ i::before {
   padding-right: 2px;
   color: #ffa526;
 }
+
+.Toastify__toast-body {
+  font-family: Vazir !important;
+}
+
+.Toastify__toast-body {
+  flex: 0 auto;
+}
