@@ -51,9 +51,11 @@ class Home extends React.Component {
 
   async componentDidMount() {
     this.setState({ loading: true });
-    await this.fetchRestaurants();
-    await this.fetchPartyFoods();
-    await this.fetchRemainingSeconds();
+    await Promise.all([
+      this.fetchRestaurants(),
+      this.fetchPartyFoods(),
+      this.fetchRemainingSeconds(),
+    ]);
     this.setState({ loading: false });
   }
 
