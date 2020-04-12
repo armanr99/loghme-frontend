@@ -1,11 +1,44 @@
 import React from "react";
+import Modal from "react-bootstrap/Modal";
+import FoodModalCard from "../../../../.../../../../../../components/FoodModalCard";
 import convertToPersianDigits from "../../../../../../../../services/tools/convertToPersianDigits";
 import "./styles.css";
 
 class FoodPartyCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showCart: false,
+    };
+
+    this.handleShowCard = this.handleShowCard.bind(this);
+    this.handleCloseCard = this.handleCloseCard.bind(this);
+  }
+
+  handleCloseCard() {
+    this.setState({ showCart: false });
+  }
+
+  handleShowCard() {
+    this.setState({ showCart: true });
+  }
+
   render() {
     return (
       <div className="foodparty-card loghme-card">
+        <Modal
+          show={this.state.showCart}
+          onHide={this.handleCloseCard}
+          centerd={true}
+          style={{ marginTop: "100px" }}
+          size="md"
+        >
+          <FoodModalCard
+            food={this.props.partyFood}
+            user={this.props.user}
+            updateUser={this.props.updateUser}
+          />
+        </Modal>
         <div className="foodparty-food-info flex flex-col">
           <div className="foodparty-food-info-top flex flex-center">
             <div className="foodparty-image">
@@ -37,9 +70,12 @@ class FoodPartyCard extends React.Component {
               <span className="loghme-button-style foodparty-button-info">
                 موجودی: {convertToPersianDigits(this.props.partyFood.count)}
               </span>
-              <a href="/menu" className="loghme-button-style foodparty-buy">
+              <button
+                className="loghme-button loghme-button-style foodparty-buy"
+                onClick={this.handleShowCard}
+              >
                 خرید
-              </a>
+              </button>
             </div>
           </div>
         </div>

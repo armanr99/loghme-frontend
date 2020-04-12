@@ -96,13 +96,13 @@
   overflow: hidden;
 }
 
-.foodparty-order a,
+.foodparty-order button,
 .foodparty-order span {
   height: 25px !important;
   border-radius: 8px !important;
 }
 
-.foodparty-order a {
+.foodparty-order button {
   padding: 2px 30px !important;
 }
 

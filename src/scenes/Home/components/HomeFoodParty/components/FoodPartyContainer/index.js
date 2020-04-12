@@ -24,15 +24,18 @@ class FoodPartyContainer extends React.Component {
   render() {
     const partyFoods = this.state.partyFoods;
     const foodPartyCards = partyFoods.map((partyFood) => (
-      <FoodPartyCard partyFood={partyFood} key={partyFood.name + partyFood.restaurant.id}/>
+      <FoodPartyCard
+        partyFood={partyFood}
+        key={partyFood.name + partyFood.restaurant.id}
+        user={this.props.user}
+        updateUser={this.props.updateUser}
+      />
     ));
     const sliderSettings = getSliderSettings(foodPartyCards.length);
-    
+
     return (
       <div className="foodparty-container">
-        <Slider {...sliderSettings}>
-          {foodPartyCards}
-        </Slider>
+        <Slider {...sliderSettings}>{foodPartyCards}</Slider>
       </div>
     );
   }

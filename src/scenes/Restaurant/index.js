@@ -31,7 +31,11 @@ class Restaurant extends React.Component {
         <main className="restaurant">
           <RestaurantLogo restaurant={this.state.restaurant} />
           <RestaurantName restaurant={this.state.restaurant} />
-          <RestaurantInfo restaurant={this.state.restaurant} />
+          <RestaurantInfo
+            restaurant={this.state.restaurant}
+            user={this.props.user}
+            updateUser={this.props.updateUser}
+          />
         </main>
         <Footer />
       </div>

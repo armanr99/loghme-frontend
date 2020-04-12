@@ -10,10 +10,11 @@
   border: 1px solid #a7a7a7;
 }
 
-.add-credit input[type="submit"] {
+.add-credit button {
   background-color: var(--med-turquoise-color);
   color: white;
   font-weight: bold;
   border: 1px solid #49a69f;
   padding: 12px 20px;
+  width: 100%;
 }
