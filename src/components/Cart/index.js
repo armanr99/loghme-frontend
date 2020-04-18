@@ -15,7 +15,7 @@ class Cart extends React.Component {
     this.handleFinalize = this.handleFinalize.bind(this);
   }
 
-  async handleFinalize(event) {
+  handleFinalize(event) {
     event.preventDefault();
 
     if (this.props.user.cart.items.length === 0) {

@@ -30,7 +30,7 @@ class CreditTab extends React.Component {
     });
   }
 
-  async handleSubmit(event) {
+  handleSubmit(event) {
     event.preventDefault();
 
     const amountState = this.state.amount;

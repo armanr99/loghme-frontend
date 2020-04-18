@@ -25,7 +25,7 @@ class CartItemCard extends React.Component {
     this.props.dispatch(addToCart(foodInfo));
   }
 
-  async handleRemoveFood() {
+  handleRemoveFood() {
     const foodInfo = {
       foodName: this.props.cartItem.food.name,
       restaurantId: this.props.cartItem.food.restaurant.id,
