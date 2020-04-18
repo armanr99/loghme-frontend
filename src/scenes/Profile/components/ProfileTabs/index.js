@@ -4,21 +4,39 @@ import OrdersTab from "./components/OrdersTab";
 import "./styles.css";
 
 class ProfileTabs extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedTab: "credit",
+    };
+
+    this.handleTabChange = this.handleTabChange.bind(this);
+  }
+
+  handleTabChange(event) {
+    const selectedTab = event.target.value;
+    this.setState({ selectedTab });
+  }
+
   render() {
     return (
       <div className="container profile-content flex-center">
         <input
           className="radio"
           id="credit-tab-select"
-          name="group"
           type="radio"
-          checked
+          value="credit"
+          checked={this.state.selectedTab === "credit"}
+          onChange={this.handleTabChange}
         />
         <input
           className="radio"
           id="orders-tab-select"
-          name="group"
           type="radio"
+          value="orders"
+          checked={this.state.selectedTab === "orders"}
+          onChange={this.handleTabChange}
         />
         <div className="profile-options flex justify-content-between align-items-center">
           <label
