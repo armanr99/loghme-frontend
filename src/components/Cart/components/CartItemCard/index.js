@@ -3,7 +3,10 @@ import { toast } from "react-toastify";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import API from "../../../../services/api";
-import { setUser } from "../../../../services/redux/actions/userActions";
+import {
+  setUser,
+  addToCart,
+} from "../../../../services/redux/actions/userActions";
 import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
 import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
 import { error, success } from "../../../../services/toastify/configs";
@@ -16,20 +19,13 @@ class CartItemCard extends React.Component {
     this.handleDeleteFood = this.handleDeleteFood.bind(this);
   }
 
-  async handleAddFood() {
-    const data = {
+  handleAddFood() {
+    const foodInfo = {
       foodName: this.props.cartItem.food.name,
       restaurantId: this.props.cartItem.food.restaurant.id,
     };
 
-    try {
-      const response = await API.post("/cart", data);
-      const user = response.data;
-      this.props.dispatch(setUser(user));
-      toast.success(success.ADD_TO_CART);
-    } catch (err) {
-      toast.error(error.INTERNAL);
-    }
+    this.props.dispatch(addToCart(foodInfo));
   }
 
   async handleDeleteFood() {

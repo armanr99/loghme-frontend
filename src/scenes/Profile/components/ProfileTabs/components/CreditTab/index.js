@@ -55,7 +55,6 @@ class CreditTab extends React.Component {
     return (
       <div className="profile-tab credit-tab">
         <form
-          action="/cart"
           className="row add-credit flex align-items-center"
           onSubmit={this.handleSubmit}
         >
