@@ -32,3 +32,16 @@ export function removeFromCart(foodInfo) {
     }
   };
 }
+
+export function finalizeCart() {
+  return async function (dispatch) {
+    try {
+      const response = await API.post("/cart/order");
+      const orders = response.data.orders;
+      dispatch({ type: "FINALIZE_CART_SUCCESS", payload: orders });
+    } catch (err) {
+      dispatch({ type: "INTERNAL_ERROR", payload: err });
+    }
+    
+  };
+}
