@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
 import API from "../../../../../../services/api";
+import { setUser } from "../../../../../../services/redux/actions/userActions";
 import isNumber from "../../../../../../services/tools/isNumber";
 import convertToPersianDigits from "../../../../../../services/tools/convertToPersianDigits";
 import convertToEnglishDigits from "../../../../../../services/tools/convertToEnglishDigits";
@@ -43,7 +44,7 @@ class CreditTab extends React.Component {
     try {
       const response = await API.post("/wallet", { amount });
       const user = response.data;
-      this.props.dispatch({ type: "SET_USER", user: user });
+      this.props.dispatch(setUser(user));
       toast.success(success.CHARGE);
     } catch (err) {
       toast.error(error.INTERNAL);
@@ -53,7 +54,11 @@ class CreditTab extends React.Component {
   render() {
     return (
       <div className="profile-tab credit-tab">
-        <form action="/cart" className="row add-credit flex align-items-center" onSubmit={this.handleSubmit}>
+        <form
+          action="/cart"
+          className="row add-credit flex align-items-center"
+          onSubmit={this.handleSubmit}
+        >
           <div className="col-sm-8">
             <input
               type="text"

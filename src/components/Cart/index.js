@@ -5,6 +5,7 @@ import API from "../../services/api";
 import { toast } from "react-toastify";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { setUser } from '../../services/redux/actions/userActions';
 import mapStateToProps from "../../services/redux/configs/userStateToProps";
 import { error, success } from "../../services/toastify/configs";
 import "./styles.css";
@@ -26,7 +27,7 @@ class Cart extends React.Component {
     try {
       const response = await API.post("/cart/order");
       const user = response.data;
-      this.props.dispatch({ type: "SET_USER", user: user });
+      this.props.dispatch(setUser(user));
       toast.success(success.FINALIZE_ORDER);
     } catch (err) {
       toast.error(error.INTERNAL);

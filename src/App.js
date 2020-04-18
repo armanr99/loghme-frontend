@@ -7,6 +7,7 @@ import Signup from "./scenes/Signup";
 import Login from "./scenes/Login";
 import Restaurant from "./scenes/Restaurant";
 import API from "./services/api";
+import { setUser } from "./services/redux/actions/userActions";
 import { ToastContainer } from "react-toastify";
 import mapStateToProps from "./services/redux/configs/userStateToProps";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,7 +16,7 @@ class App extends React.Component {
   async componentDidMount() {
     const response = await API.get("/user");
     const user = response.data;
-    this.props.dispatch({ type: "SET_USER", user: user });
+    this.props.dispatch(setUser(user));
   }
 
   render() {
