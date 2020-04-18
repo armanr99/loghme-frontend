@@ -42,6 +42,17 @@ export function finalizeCart() {
     } catch (err) {
       dispatch({ type: "INTERNAL_ERROR", payload: err });
     }
-    
+  };
+}
+
+export function chargeWallet(amount) {
+  return async function (dispatch) {
+    try {
+      const response = await API.post("/wallet", { amount });
+      const credit = response.data.credit;
+      dispatch({ type: "CHARGE_WALLET_SUCCESS", payload: credit });
+    } catch (err) {
+      dispatch({ type: "INTERNAL_ERROR", payload: err });
+    }
   };
 }

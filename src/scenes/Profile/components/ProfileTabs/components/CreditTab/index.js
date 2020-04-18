@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
 import API from "../../../../../../services/api";
-import { setUser } from "../../../../../../services/redux/actions/userActions";
+import { chargeWallet } from "../../../../../../services/redux/actions/userActions";
 import isNumber from "../../../../../../services/tools/isNumber";
 import convertToPersianDigits from "../../../../../../services/tools/convertToPersianDigits";
 import convertToEnglishDigits from "../../../../../../services/tools/convertToEnglishDigits";
@@ -41,16 +41,9 @@ class CreditTab extends React.Component {
     }
 
     const amount = convertToEnglishDigits(amountState);
-    try {
-      const response = await API.post("/wallet", { amount });
-      const user = response.data;
-      this.props.dispatch(setUser(user));
-      toast.success(success.CHARGE);
-    } catch (err) {
-      toast.error(error.INTERNAL);
-    }
+    this.props.dispatch(chargeWallet(amount));
   }
-
+  
   render() {
     return (
       <div className="profile-tab credit-tab">

@@ -37,6 +37,10 @@ export default function reducer(state = initialState, action) {
         },
       };
     }
+    case "CHARGE_WALLET_SUCCESS": {
+      toast.success(success.CHARGE);
+      return { user: { ...state.user, credit: action.payload } };
+    }
     case "INTERNAL_ERROR": {
       toast.error(error.INTERNAL);
       return state;
