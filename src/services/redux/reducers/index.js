@@ -23,7 +23,11 @@ export default function reducer(state = initialState, action) {
       toast.success(success.ADD_TO_CART);
       return { user: { ...state.user, cart: action.payload } };
     }
-    case "ADD_TO_CART_ERROR": {
+    case "REMOVE_FROM_CART_SUCCESS": {
+      toast.success(success.REMOVE_FROM_CART);
+      return { user: { ...state.user, cart: action.payload } };
+    }
+    case "INTERNAL_ERROR": {
       toast.error(error.INTERNAL);
       return state;
     }
