@@ -1,53 +1,37 @@
 import React from "react";
-import { toast } from "react-toastify";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import API from "../../../../services/api";
-import { setUser } from "../../../../services/redux/actions/userActions";
+import {
+  addToCart,
+  removeFromCart,
+} from "../../../../services/redux/actions/userActions";
 import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
 import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
-import { error, success } from "../../../../services/toastify/configs";
 import "./styles.css";
 
 class CartItemCard extends React.Component {
   constructor(props) {
     super(props);
     this.handleAddFood = this.handleAddFood.bind(this);
-    this.handleDeleteFood = this.handleDeleteFood.bind(this);
+    this.handleRemoveFood = this.handleRemoveFood.bind(this);
   }
 
-  async handleAddFood() {
-    const data = {
+  handleAddFood() {
+    const foodInfo = {
       foodName: this.props.cartItem.food.name,
       restaurantId: this.props.cartItem.food.restaurant.id,
     };
 
-    try {
-      const response = await API.post("/cart", data);
-      const user = response.data;
-      this.props.dispatch(setUser(user));
-      toast.success(success.ADD_TO_CART);
-    } catch (err) {
-      toast.error(error.INTERNAL);
-    }
+    this.props.dispatch(addToCart(foodInfo));
   }
 
-  async handleDeleteFood() {
-    const data = {
+  handleRemoveFood() {
+    const foodInfo = {
       foodName: this.props.cartItem.food.name,
       restaurantId: this.props.cartItem.food.restaurant.id,
     };
 
-    try {
-      const response = await API.delete("/cart", {
-        data: data,
-      });
-      const user = response.data;
-      this.props.dispatch(setUser(user));
-      toast.success(success.REMOVE_FROM_CART);
-    } catch (err) {
-      toast.error(error.INTERNAL);
-    }
+    this.props.dispatch(removeFromCart(foodInfo));
   }
 
   render() {
@@ -65,7 +49,7 @@ class CartItemCard extends React.Component {
             <span>{convertToPersianDigits(this.props.cartItem.count)}</span>
             <i
               className="glyph-icon flaticon-minus"
-              onClick={this.handleDeleteFood}
+              onClick={this.handleRemoveFood}
             ></i>
           </div>
           <div className="cart-item-price">

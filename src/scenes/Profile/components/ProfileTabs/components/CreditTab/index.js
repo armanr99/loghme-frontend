@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
-import API from "../../../../../../services/api";
-import { setUser } from "../../../../../../services/redux/actions/userActions";
+import { chargeWallet } from "../../../../../../services/redux/actions/userActions";
 import isNumber from "../../../../../../services/tools/isNumber";
 import convertToPersianDigits from "../../../../../../services/tools/convertToPersianDigits";
 import convertToEnglishDigits from "../../../../../../services/tools/convertToEnglishDigits";
-import { error, success } from "../../../../../../services/toastify/configs";
+import { error } from "../../../../../../services/toastify/configs";
 import mapStateToProps from "../../../../../../services/redux/configs/userStateToProps";
 import "./styles.css";
 
@@ -31,7 +30,7 @@ class CreditTab extends React.Component {
     });
   }
 
-  async handleSubmit(event) {
+  handleSubmit(event) {
     event.preventDefault();
 
     const amountState = this.state.amount;
@@ -41,21 +40,13 @@ class CreditTab extends React.Component {
     }
 
     const amount = convertToEnglishDigits(amountState);
-    try {
-      const response = await API.post("/wallet", { amount });
-      const user = response.data;
-      this.props.dispatch(setUser(user));
-      toast.success(success.CHARGE);
-    } catch (err) {
-      toast.error(error.INTERNAL);
-    }
+    this.props.dispatch(chargeWallet(amount));
   }
-
+  
   render() {
     return (
       <div className="profile-tab credit-tab">
         <form
-          action="/cart"
           className="row add-credit flex align-items-center"
           onSubmit={this.handleSubmit}
         >
