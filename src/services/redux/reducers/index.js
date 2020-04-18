@@ -16,7 +16,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case "SET_USER": {
+    case "SET_USER_SUCCESS": {
       return { ...state, user: action.payload };
     }
     case "ADD_TO_CART_SUCCESS": {
@@ -27,6 +27,14 @@ export default function reducer(state = initialState, action) {
       toast.success(success.REMOVE_FROM_CART);
       return { user: { ...state.user, cart: action.payload } };
     }
+    case "CHARGE_WALLET_SUCCESS": {
+      toast.success(success.CHARGE);
+      return { user: { ...state.user, credit: action.payload } };
+    }
+    case "INTERNAL_ERROR": {
+      toast.error(error.INTERNAL);
+      return state;
+    }
     case "FINALIZE_CART_SUCCESS": {
       toast.success(success.FINALIZE_ORDER);
       return {
@@ -36,14 +44,6 @@ export default function reducer(state = initialState, action) {
           cart: { items: [], totalPrice: 0 },
         },
       };
-    }
-    case "CHARGE_WALLET_SUCCESS": {
-      toast.success(success.CHARGE);
-      return { user: { ...state.user, credit: action.payload } };
-    }
-    case "INTERNAL_ERROR": {
-      toast.error(error.INTERNAL);
-      return state;
     }
     default: {
       return state;

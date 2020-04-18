@@ -1,12 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { toast } from "react-toastify";
-import API from "../../../../../../services/api";
 import { chargeWallet } from "../../../../../../services/redux/actions/userActions";
 import isNumber from "../../../../../../services/tools/isNumber";
 import convertToPersianDigits from "../../../../../../services/tools/convertToPersianDigits";
 import convertToEnglishDigits from "../../../../../../services/tools/convertToEnglishDigits";
-import { error, success } from "../../../../../../services/toastify/configs";
+import { error } from "../../../../../../services/toastify/configs";
 import mapStateToProps from "../../../../../../services/redux/configs/userStateToProps";
 import "./styles.css";
 

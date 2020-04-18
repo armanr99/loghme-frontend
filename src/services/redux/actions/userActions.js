@@ -1,9 +1,14 @@
 import API from "../../api";
 
-export function setUser(user) {
-  return {
-    type: "SET_USER",
-    payload: user,
+export function setUser() {
+  return async function (dispatch) {
+    try {
+      const response = await API.get("/user");
+      const user = response.data;
+      dispatch({ type: "SET_USER_SUCCESS", payload: user });
+    } catch (err) {
+      dispatch({ type: "INTERNAL_ERROR", payload: err });
+    }
   };
 }
 
