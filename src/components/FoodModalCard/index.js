@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import API from "../../services/api";
+import { setUser } from "../../services/redux/actions/userActions";
 import mapStateToProps from "../../services/redux/configs/userStateToProps";
 import convertToPersianDigits from "../../services/tools/convertToPersianDigits";
 import { error, success } from "../../services/toastify/configs";
@@ -18,7 +19,7 @@ class FoodModalCard extends React.Component {
 
   async handleAddFood(event) {
     event.preventDefault();
-    
+
     const data = {
       foodName: this.props.food.name,
       restaurantId: this.props.food.restaurant.id,
@@ -27,7 +28,7 @@ class FoodModalCard extends React.Component {
     try {
       const response = await API.post("/cart", data);
       const user = response.data;
-      this.props.dispatch({ type: "SET_USER", user: user });
+      this.props.dispatch(setUser(user));
       toast.success(success.ADD_TO_CART);
     } catch (err) {
       toast.error(error.INTERNAL);
@@ -45,7 +46,7 @@ class FoodModalCard extends React.Component {
         data: data,
       });
       const newUser = response.data;
-      this.props.dispatch({ type: "SET_USER", user: newUser });
+      this.props.dispatch(setUser(newUser));
       toast.success(success.REMOVE_FROM_CART);
     } catch (err) {
       toast.error(error.INTERNAL);
