@@ -15,17 +15,30 @@ class Home extends React.Component {
       restaurants: [],
       partyFoods: [],
       loading: true,
+      limit: 20,
+      offset: 0,
     };
 
     this.fetchRestaurants = this.fetchRestaurants.bind(this);
     this.fetchPartyFoods = this.fetchPartyFoods.bind(this);
     this.fetchRemainingSeconds = this.fetchRemainingSeconds.bind(this);
+    this.fetchMoreRestaurants = this.fetchMoreRestaurants.bind(this);
   }
 
-  async fetchRestaurants() {
-    const response = await API.get("/restaurants");
-    const restaurants = response.data.restaurants;
-    this.setState({ restaurants });
+  async fetchRestaurants(offset) {
+    const limit = 20;
+    const response = await API.get(
+      `/restaurants?limit=${limit}&offset=${offset}`
+    );
+    const restaurants = this.state.restaurants.concat(
+      response.data.restaurants
+    );
+    this.setState({ restaurants, offset });
+  }
+
+  fetchMoreRestaurants() {
+    const offset = this.state.offset + 1;
+    this.fetchRestaurants(offset);
   }
 
   async fetchPartyFoods() {
@@ -43,7 +56,7 @@ class Home extends React.Component {
   async componentDidMount() {
     this.setState({ loading: true });
     await Promise.all([
-      this.fetchRestaurants(),
+      this.fetchRestaurants(0),
       this.fetchPartyFoods(),
       this.fetchRemainingSeconds(),
     ]);
@@ -63,7 +76,10 @@ class Home extends React.Component {
               partyFoods={this.state.partyFoods}
               remainingSeconds={this.state.remainingSeconds}
             />
-            <HomeRestaurants restaurants={this.state.restaurants} />
+            <HomeRestaurants
+              restaurants={this.state.restaurants}
+              fetchMoreRestaurants={this.fetchMoreRestaurants}
+            />
           </main>
         )}
         <Footer />

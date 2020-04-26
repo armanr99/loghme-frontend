@@ -10,6 +10,12 @@ class HomeRestaurants extends React.Component {
       <div className="home-section flex flex-col justify-content-center align-items-center home-restaurants">
         <SectionTitle title="رستوران‌ها" />
         <RestaurantsContainer restaurants={this.props.restaurants} />
+        <button
+          className="loghme-button loghme-button-style foodparty-buy add-more-button"
+          onClick={this.props.fetchMoreRestaurants}
+        >
+          نمایش بیشتر
+        </button>
       </div>
     );
   }
