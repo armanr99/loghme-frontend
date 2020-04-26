@@ -2,7 +2,8 @@ export const error = {
   EMPTY_FIELD: "تمام فیلد‌های ورودی نیازمند پرشدن هستند",
   EMPTY_CARD: "سبد خرید خالی است",
   INTERNAL: "خطای داخلی",
-  EMAIL: "فرمت ایمیل اشتباه است"
+  EMAIL: "فرمت ایمیل اشتباه است",
+  LEAST_EMPTY_FIELD: "حداقل یکی از فیلد‌های ورودی نیازمند پرشدن است",
 };
 
 export const success = {

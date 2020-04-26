@@ -31,10 +31,12 @@ class HomeIntroSearch extends React.Component {
     const foodName = this.state.foodName;
     const restaurantName = this.state.restaurantName;
 
-    if (!foodName || !restaurantName) {
-      toast.error(error.EMPTY_FIELD);
+    if (!foodName && !restaurantName) {
+      toast.error(error.LEAST_EMPTY_FIELD);
       return;
     }
+
+    this.props.handleSearch(restaurantName, foodName);
   }
 
   render() {

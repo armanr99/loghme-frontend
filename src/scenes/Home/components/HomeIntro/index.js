@@ -10,7 +10,7 @@ class HomeIntro extends React.Component {
       <div className="home-intro flex-center">
         <HomeIntroCover />
         <HomeIntroDescription />
-        <HomeIntroSearch />
+        <HomeIntroSearch handleSearch={this.props.handleSearch}/>
       </div>
     );
   }

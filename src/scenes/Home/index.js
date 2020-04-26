@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import HomeIntro from "./components/HomeIntro";
 import HomeRestaurants from "./components/HomeRestaurants";
+import HomeSearchResults from "./components/HomeSearchResults";
 import HomeFoodParty from "./components/HomeFoodParty";
 import Loading from "../../components/Loading";
 import API from "../../services/api";
@@ -13,8 +14,10 @@ class Home extends React.Component {
     super(props);
     this.state = {
       restaurants: [],
+      searchRestaurants: [],
       partyFoods: [],
       loading: true,
+      searchVisible: false,
       limit: 20,
       offset: 0,
     };
@@ -23,6 +26,7 @@ class Home extends React.Component {
     this.fetchPartyFoods = this.fetchPartyFoods.bind(this);
     this.fetchRemainingSeconds = this.fetchRemainingSeconds.bind(this);
     this.fetchMoreRestaurants = this.fetchMoreRestaurants.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   async fetchRestaurants(offset) {
@@ -53,6 +57,15 @@ class Home extends React.Component {
     this.setState({ remainingSeconds });
   }
 
+  async handleSearch(restaurantName, foodName) {
+    const response = await API.get(
+      `/search/restaurants?restaurantName=${restaurantName}&foodName=${foodName}`
+    );
+    const searchRestaurants = response.data.restaurants;
+
+    this.setState({ searchRestaurants, searchVisible: true });
+  }
+
   async componentDidMount() {
     this.setState({ loading: true });
     await Promise.all([
@@ -71,7 +84,11 @@ class Home extends React.Component {
           <Loading />
         ) : (
           <main className="home">
-            <HomeIntro />
+            <HomeIntro handleSearch={this.handleSearch} />
+            <HomeSearchResults
+              restaurants={this.state.searchRestaurants}
+              visible={this.state.searchVisible}
+            />
             <HomeFoodParty
               partyFoods={this.state.partyFoods}
               remainingSeconds={this.state.remainingSeconds}

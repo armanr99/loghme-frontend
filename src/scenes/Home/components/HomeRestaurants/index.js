@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import RestaurantsContainer from "./components/RestaurantsContainer";
+import RestaurantsContainer from "../RestaurantsContainer";
 import SectionTitle from "../../../../components/SectionTitle";
 import "./styles.css";
 
