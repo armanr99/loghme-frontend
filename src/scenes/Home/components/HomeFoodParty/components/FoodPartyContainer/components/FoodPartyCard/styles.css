@@ -30,6 +30,7 @@
 .foodparty-restaurant-name span {
   font-size: 1.2em;
   color: #454545;
+  width: 90%;
 }
 
 .foodparty-food-info-top {
@@ -94,6 +95,7 @@
 .foodparty-name {
   font-size: 1.3em;
   overflow: hidden;
+  width: 100%;
 }
 
 .foodparty-order button,

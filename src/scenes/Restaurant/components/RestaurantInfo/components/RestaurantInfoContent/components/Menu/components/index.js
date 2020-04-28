@@ -39,7 +39,7 @@ class MenuCard extends React.Component {
             <img src={this.props.food.image} alt="Food" />
           </div>
           <div className="menu-food-name flex justify-content-around align-items-center">
-            <span>{this.props.food.name}</span>
+            <span className="big-title">{this.props.food.name}</span>
             <span>{convertToPersianDigits(this.props.food.popularity)}</span>
             <span className="star">★</span>
           </div>

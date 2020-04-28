@@ -12,7 +12,7 @@ class RestaurantCart extends React.Component {
           </Link>
         </div>
         <div className="restaurant-card-info flex flex-col justify-content-center align-items-center">
-          <p>{this.props.restaurant.name}</p>
+          <span className="big-title">{this.props.restaurant.name}</span>
           <Link
             to={`/restaurants/${this.props.restaurant.id}`}
             className="loghme-button-style"
