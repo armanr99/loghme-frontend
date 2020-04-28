@@ -94,6 +94,7 @@
 .foodparty-name {
   font-size: 1.3em;
   overflow: hidden;
+  width: 100%;
 }
 
 .foodparty-order button,
