@@ -77,7 +77,7 @@ class FoodPartyCard extends React.Component {
           </div>
         </div>
         <div className="foodparty-restaurant-name flex flex-center">
-          <span>{this.props.partyFood.restaurant.name}</span>
+          <span className="big-title">{this.props.partyFood.restaurant.name}</span>
         </div>
       </div>
     );
