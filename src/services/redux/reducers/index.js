@@ -37,13 +37,7 @@ export default function reducer(state = initialState, action) {
     }
     case "FINALIZE_CART_SUCCESS": {
       toast.success(success.FINALIZE_ORDER);
-      return {
-        user: {
-          ...state.user,
-          orders: action.payload,
-          cart: { items: [], totalPrice: 0 },
-        },
-      };
+      return { ...state, user: action.payload };
     }
     default: {
       return state;

@@ -41,9 +41,10 @@ export function removeFromCart(foodInfo) {
 export function finalizeCart() {
   return async function (dispatch) {
     try {
-      const response = await API.post("/cart/order");
-      const orders = response.data.orders;
-      dispatch({ type: "FINALIZE_CART_SUCCESS", payload: orders });
+      await API.post("/cart/order");
+      const userResponse = await API.get("/user");
+      const user = userResponse.data;
+      dispatch({ type: "FINALIZE_CART_SUCCESS", payload: user });
     } catch (err) {
       dispatch({ type: "INTERNAL_ERROR", payload: err });
     }
