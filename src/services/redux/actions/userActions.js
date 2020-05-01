@@ -7,7 +7,7 @@ export function setUser() {
       const user = response.data;
       dispatch({ type: "SET_USER_SUCCESS", payload: user });
     } catch (err) {
-      dispatch({ type: "INTERNAL_ERROR", payload: err });
+      handleError(err);
     }
   };
 }
@@ -19,7 +19,7 @@ export function addToCart(foodInfo) {
       const cart = response.data;
       dispatch({ type: "ADD_TO_CART_SUCCESS", payload: cart });
     } catch (err) {
-      dispatch({ type: "INTERNAL_ERROR", payload: err });
+      handleError(err);
     }
   };
 }
@@ -33,7 +33,7 @@ export function removeFromCart(foodInfo) {
       const cart = response.data;
       dispatch({ type: "REMOVE_FROM_CART_SUCCESS", payload: cart });
     } catch (err) {
-      dispatch({ type: "INTERNAL_ERROR", payload: err });
+      handleError(err);
     }
   };
 }
@@ -46,7 +46,7 @@ export function finalizeCart() {
       const user = userResponse.data;
       dispatch({ type: "FINALIZE_CART_SUCCESS", payload: user });
     } catch (err) {
-      dispatch({ type: "INTERNAL_ERROR", payload: err });
+      handleError(err);
     }
   };
 }
@@ -58,7 +58,7 @@ export function chargeWallet(amount) {
       const credit = response.data.credit;
       dispatch({ type: "CHARGE_WALLET_SUCCESS", payload: credit });
     } catch (err) {
-      dispatch({ type: "INTERNAL_ERROR", payload: err });
+      handleError(err);
     }
   };
 }
@@ -77,7 +77,7 @@ export function signupUser(firstName, lastName, email, phoneNumber, password) {
       localStorage.setItem("token", token);
       dispatch({ type: "SIGNUP_SUCCESS" });
     } catch (err) {
-      dispatch({ type: "INTERNAL_ERROR", payload: err });
+      handleError(err);
     }
   };
 }
@@ -94,6 +94,26 @@ export function loginUser(email, password) {
       await dispatch(setUser());
       dispatch({ type: "LOGIN_SUCCESS" });
     } catch (err) {
+      dispatch(handleError(err));
+    }
+  };
+}
+
+export function logoutUser() {
+  return async function (dispatch) {
+    localStorage.removeItem("token");
+    dispatch({ type: "LOGOUT_SUCCESS" });
+  };
+}
+
+export function handleError(err) {
+  return async function (dispatch) {
+    if (
+      err.response &&
+      (err.response.status === 401 || err.response.status === 403)
+    ) {
+      dispatch(logoutUser());
+    } else {
       dispatch({ type: "INTERNAL_ERROR", payload: err });
     }
   };
