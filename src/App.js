@@ -8,10 +8,16 @@ import Signup from "./scenes/Signup";
 import Login from "./scenes/Login";
 import Restaurant from "./scenes/Restaurant";
 import DecisionRoute from "./components/DecisionRoute";
-import mapStateToProps from "./services/redux/configs/authenticatedToProps";
+import { setUser } from "./services/redux/actions/userActions";
 import "react-toastify/dist/ReactToastify.css";
 
 class App extends React.Component {
+  componentDidMount() {
+    if (localStorage.getItem("token") !== null) {
+      this.props.dispatch(setUser());
+    }
+  }
+
   render() {
     const isAuthenticated = localStorage.getItem("token") !== null;
     return (
@@ -56,4 +62,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect()(App);

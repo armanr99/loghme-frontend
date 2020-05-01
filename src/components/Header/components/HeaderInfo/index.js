@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 import Cart from "../../../Cart";
 import convertToPersianDigits from "../../../../services/tools/convertToPersianDigits";
 import mapStateToProps from "../../../../services/redux/configs/userStateToProps";
-import { logoutUser } from "../../../../services/redux/actions/userActions";
 import "./styles.css";
 
 class HeaderInfo extends React.Component {
@@ -31,7 +30,8 @@ class HeaderInfo extends React.Component {
 
   handleLogout(event) {
     event.preventDefault();
-    this.props.dispatch(logoutUser());
+    localStorage.removeItem("token");
+    window.location.href = "/";
   }
 
   render() {

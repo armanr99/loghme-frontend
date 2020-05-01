@@ -12,8 +12,6 @@ const initialState = {
     orders: [],
     cart: { items: [], totalPrice: 0 },
   },
-  redirect: false,
-  authenticated: false,
 };
 
 export default function reducer(state = initialState, action) {
@@ -33,21 +31,9 @@ export default function reducer(state = initialState, action) {
       toast.success(success.CHARGE);
       return { ...state, user: { ...state.user, credit: action.payload } };
     }
-    case "SIGNUP_SUCCESS": {
-      toast.success(success.SIGNUP);
-      return { ...state, redirect: true };
-    }
-    case "LOGIN_SUCCESS": {
-      toast.success(success.LOGIN);
-      return { ...state, redirect: true, authenticated: true };
-    }
     case "FINALIZE_CART_SUCCESS": {
       toast.success(success.FINALIZE_ORDER);
       return { ...state, user: action.payload };
-    }
-    case "LOGOUT_SUCCESS": {
-      toast.success(success.LOGOUT);
-      return { ...state, authenticated: false };
     }
     case "INTERNAL_ERROR": {
       toast.error(error.INTERNAL);

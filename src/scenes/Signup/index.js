@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { connect } from "react-redux";
 import logo from "../../assets/images/logo.png";
+import API from "../../services/api";
 import validateEmail from "../../services/tools/validateEmail";
-import { signupUser } from "../../services/redux/actions/userActions";
 import { error } from "../../services/toastify/configs";
-import mapStateToProps from "../../services/redux/configs/redirectStateToProps";
 import "./styles.css";
 
 class Signup extends React.Component {
@@ -36,11 +34,12 @@ class Signup extends React.Component {
   async handleSubmit(event) {
     event.preventDefault();
 
-    const firstName = this.state.firstName;
-    const lastName = this.state.lastName;
-    const email = this.state.email;
-    const phoneNumber = this.state.phoneNumber;
-    const password = this.state.password;
+    const data = this.state;
+    const firstName = data.firstName;
+    const lastName = data.lastName;
+    const email = data.email;
+    const phoneNumber = data.phoneNumber;
+    const password = data.password;
 
     if (!firstName || !lastName || !email || !phoneNumber || !password) {
       toast.error(error.EMPTY_FIELD);
@@ -50,12 +49,11 @@ class Signup extends React.Component {
       return;
     }
 
-    await this.props.dispatch(
-      signupUser(firstName, lastName, email, phoneNumber, password)
-    );
-    if (this.props.redirect) {
-      this.props.history.push("/");
-    }
+    const response = await API.post("/signup", data);
+    const token = response.data.token;
+
+    localStorage.setItem("token", token);
+    window.location.href = "/";
   }
 
   render() {
@@ -128,4 +126,4 @@ class Signup extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(Signup);
+export default Signup;

@@ -1,12 +1,10 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { error } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
 import logo from "../../assets/images/logo.png";
+import API from "../../services/api";
 import validateEmail from "../../services/tools/validateEmail";
-import { loginUser } from "../../services/redux/actions/userActions";
-import mapStateToProps from "../../services/redux/configs/redirectStateToProps";
 import "./styles.css";
 
 class Login extends React.Component {
@@ -33,8 +31,9 @@ class Login extends React.Component {
   async handleSubmit(event) {
     event.preventDefault();
 
-    const email = this.state.email;
-    const password = this.state.password;
+    const data = this.state;
+    const email = data.email;
+    const password = data.password;
 
     if (!email || !password) {
       toast.error(error.EMPTY_FIELD);
@@ -44,10 +43,11 @@ class Login extends React.Component {
       return;
     }
 
-    await this.props.dispatch(loginUser(email, password));
-    if (this.props.redirect) {
-      this.props.history.push("/");
-    }
+    const response = await API.post("/login", data);
+    const token = response.data.token;
+
+    localStorage.setItem("token", token);
+    window.location.href = "/";
   }
 
   render() {
@@ -96,4 +96,4 @@ class Login extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(Login);
+export default Login;
