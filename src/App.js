@@ -1,12 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Home from "./scenes/Home";
 import Profile from "./scenes/Profile";
 import Signup from "./scenes/Signup";
 import Login from "./scenes/Login";
 import Restaurant from "./scenes/Restaurant";
 import DecisionRoute from "./components/DecisionRoute";
-import { ToastContainer } from "react-toastify";
+import mapStateToProps from "./services/redux/configs/authenticatedToProps";
 import "react-toastify/dist/ReactToastify.css";
 
 class App extends React.Component {
@@ -19,19 +21,19 @@ class App extends React.Component {
           <Switch>
             <DecisionRoute
               condition={!isAuthenticated}
-              path="/restaurants/:id"
+              path="/login"
               trueComponent={Login}
               falseComponent={Home}
             />
             <DecisionRoute
               condition={!isAuthenticated}
-              path="/restaurants/:id"
+              path="/signup"
               trueComponent={Signup}
               falseComponent={Home}
             />
             <DecisionRoute
               condition={isAuthenticated}
-              path="/restaurants/:id"
+              path="/profile"
               trueComponent={Profile}
               falseComponent={Login}
             />
@@ -54,4 +56,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

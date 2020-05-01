@@ -91,6 +91,7 @@ export function loginUser(email, password) {
       });
       const token = response.data.token;
       localStorage.setItem("token", token);
+      await dispatch(setUser());
       dispatch({ type: "LOGIN_SUCCESS" });
     } catch (err) {
       dispatch({ type: "INTERNAL_ERROR", payload: err });
