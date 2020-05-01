@@ -131,3 +131,7 @@ i::before {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.ltr {
+  direction: ltr;
+}

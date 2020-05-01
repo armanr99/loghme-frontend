@@ -62,3 +62,22 @@ export function chargeWallet(amount) {
     }
   };
 }
+
+export function signupUser(firstName, lastName, email, phoneNumber, password) {
+  return async function (dispatch) {
+    try {
+      const response = await API.post("/signup", {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        password,
+      });
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      dispatch({ type: "SIGNUP_SUCCESS" });
+    } catch (err) {
+      dispatch({ type: "INTERNAL_ERROR", payload: err });
+    }
+  };
+}

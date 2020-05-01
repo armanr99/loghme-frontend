@@ -41,14 +41,14 @@ class ProfileTabs extends React.Component {
         <div className="profile-options flex justify-content-between align-items-center">
           <label
             className="orders-tab-label flex-center"
-            for="orders-tab-select"
+            htmlFor="orders-tab-select"
           >
             سفارش‌ها
           </label>
           <hr className="vertical-dash" />
           <label
             className="credit-tab-label flex-center"
-            for="credit-tab-select"
+            htmlFor="credit-tab-select"
           >
             افزایش اعتبار
           </label>
