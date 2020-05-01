@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { error } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
 import logo from "../../assets/images/logo.png";
 import validateEmail from "../../services/tools/validateEmail";
+import { loginUser } from "../../services/redux/actions/userActions";
 import "./styles.css";
 
 class Login extends React.Component {
@@ -29,23 +31,28 @@ class Login extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    
+
     const email = this.state.email;
     const password = this.state.password;
 
-    if (!validateEmail(email)) {
-      toast.error(error.EMAIL);
-      return;
-    } else if (!email || !password) {
+    if (!email || !password) {
       toast.error(error.EMPTY_FIELD);
       return;
+    } else if (!validateEmail(email)) {
+      toast.error(error.EMAIL);
+      return;
     }
+
+    await this.props.dispatch(loginUser(email, password));
   }
 
   render() {
     return (
       <div className="login-body">
-        <form className="auth flex-center flex-col" onSubmit={this.handleSubmit}>
+        <form
+          className="auth flex-center flex-col"
+          onSubmit={this.handleSubmit}
+        >
           <Link to="/">
             <div className="auth-logo">
               <img src={logo} alt="Logo" />
@@ -85,4 +92,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default connect()(Login);

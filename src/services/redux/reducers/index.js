@@ -12,6 +12,7 @@ const initialState = {
     orders: [],
     cart: { items: [], totalPrice: 0 },
   },
+  redirect: false,
 };
 
 export default function reducer(state = initialState, action) {
@@ -31,17 +32,21 @@ export default function reducer(state = initialState, action) {
       toast.success(success.CHARGE);
       return { ...state, user: { ...state.user, credit: action.payload } };
     }
-    case "SIGNUP_USER": {
+    case "SIGNUP_SUCCESS": {
       toast.success(success.SIGNUP);
       return state;
     }
-    case "INTERNAL_ERROR": {
-      toast.error(error.INTERNAL);
+    case "LOGIN_SUCCESS": {
+      toast.success(success.LOGIN);
       return state;
     }
     case "FINALIZE_CART_SUCCESS": {
       toast.success(success.FINALIZE_ORDER);
       return { ...state, user: action.payload };
+    }
+    case "INTERNAL_ERROR": {
+      toast.error(error.INTERNAL);
+      return state;
     }
     default: {
       return state;
