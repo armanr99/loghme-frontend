@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import logo from "../../assets/images/logo.png";
 import validateEmail from "../../services/tools/validateEmail";
 import { loginUser } from "../../services/redux/actions/userActions";
+import mapStateToProps from "../../services/redux/configs/redirectStateToProps";
 import "./styles.css";
 
 class Login extends React.Component {
@@ -44,6 +45,9 @@ class Login extends React.Component {
     }
 
     await this.props.dispatch(loginUser(email, password));
+    if (this.props.redirect) {
+      this.props.history.push("/");
+    }
   }
 
   render() {
@@ -92,4 +96,4 @@ class Login extends React.Component {
   }
 }
 
-export default connect()(Login);
+export default connect(mapStateToProps)(Login);

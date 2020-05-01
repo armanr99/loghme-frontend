@@ -34,11 +34,11 @@ export default function reducer(state = initialState, action) {
     }
     case "SIGNUP_SUCCESS": {
       toast.success(success.SIGNUP);
-      return state;
+      return { ...state, redirect: true };
     }
     case "LOGIN_SUCCESS": {
       toast.success(success.LOGIN);
-      return state;
+      return { ...state, redirect: true };
     }
     case "FINALIZE_CART_SUCCESS": {
       toast.success(success.FINALIZE_ORDER);

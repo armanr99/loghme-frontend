@@ -6,7 +6,7 @@ import logo from "../../assets/images/logo.png";
 import validateEmail from "../../services/tools/validateEmail";
 import { signupUser } from "../../services/redux/actions/userActions";
 import { error } from "../../services/toastify/configs";
-import mapStateToProps from "../../services/redux/configs/userStateToProps";
+import mapStateToProps from "../../services/redux/configs/redirectStateToProps";
 import "./styles.css";
 
 class Signup extends React.Component {
@@ -49,8 +49,13 @@ class Signup extends React.Component {
       toast.error(error.EMAIL);
       return;
     }
-    
-    this.props.dispatch(signupUser(firstName, lastName, email, phoneNumber, password));
+
+    await this.props.dispatch(
+      signupUser(firstName, lastName, email, phoneNumber, password)
+    );
+    if (this.props.redirect) {
+      this.props.history.push("/");
+    }
   }
 
   render() {
