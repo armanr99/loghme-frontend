@@ -5,6 +5,7 @@ export const error = {
   EMAIL: "فرمت ایمیل اشتباه است",
   LEAST_EMPTY_FIELD: "حداقل یکی از فیلد‌های ورودی نیازمند پرشدن است",
   WRONG_LOGIN: "ایمیل یا رمز عبور وارد‌شده اشتباه است",
+  DUPLICATE_EMAIL: "ایمیل وارد شده تکراری است"
 };
 
 export const success = {

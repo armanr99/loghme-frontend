@@ -49,11 +49,18 @@ class Signup extends React.Component {
       return;
     }
 
-    const response = await API.post("/signup", data);
-    const token = response.data.token;
-
-    localStorage.setItem("token", token);
-    window.location.href = "/";
+    try {
+      const response = await API.post("/signup", data);
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      window.location.href = "/";
+    } catch (err) {
+      if (err.response && err.response.status === 400) {
+        toast.error(error.DUPLICATE_EMAIL);
+      } else {
+        toast.error(error.INTERNAL);
+      }
+    }
   }
 
   render() {

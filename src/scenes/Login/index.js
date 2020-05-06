@@ -51,6 +51,8 @@ class Login extends React.Component {
     } catch (err) {
       if (err.response && err.response.status === 403) {
         toast.error(error.WRONG_LOGIN);
+      } else {
+        toast.error(error.INTERNAL);
       }
     }
   }
