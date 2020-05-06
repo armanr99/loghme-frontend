@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import logo from "../../assets/images/logo.png";
+import API from "../../services/api";
 import validateEmail from "../../services/tools/validateEmail";
 import { error } from "../../services/toastify/configs";
 import "./styles.css";
@@ -10,8 +11,10 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
+      phoneNumber: "",
       password: "",
     };
 
@@ -30,16 +33,33 @@ class Signup extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    
-    const email = this.state.email;
-    const password = this.state.password;
 
-    if (!validateEmail(email)) {
-      toast.error(error.EMAIL);
-      return;
-    } else if (!email || !password) {
+    const data = this.state;
+    const firstName = data.firstName;
+    const lastName = data.lastName;
+    const email = data.email;
+    const phoneNumber = data.phoneNumber;
+    const password = data.password;
+
+    if (!firstName || !lastName || !email || !phoneNumber || !password) {
       toast.error(error.EMPTY_FIELD);
       return;
+    } else if (!validateEmail(email)) {
+      toast.error(error.EMAIL);
+      return;
+    }
+
+    try {
+      const response = await API.post("/signup", data);
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      window.location.href = "/";
+    } catch (err) {
+      if (err.response && err.response.status === 400) {
+        toast.error(error.DUPLICATE_EMAIL);
+      } else {
+        toast.error(error.INTERNAL);
+      }
     }
   }
 
@@ -57,25 +77,41 @@ class Signup extends React.Component {
           </Link>
           <input
             type="text"
-            name="name"
-            placeholder="نام و نام خانوادگی"
+            name="firstName"
+            placeholder="نام"
             className="loghme-input-text"
-            value={this.state.name}
+            value={this.state.firstName}
+            onChange={this.handleInputChange}
+          />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="نام خانوادگی"
+            className="loghme-input-text"
+            value={this.state.lastName}
             onChange={this.handleInputChange}
           />
           <input
             type="email"
             name="email"
             placeholder="ایمیل"
-            className="loghme-input-text"
+            className="loghme-input-text ltr"
             value={this.state.email}
+            onChange={this.handleInputChange}
+          />
+          <input
+            type="text"
+            name="phoneNumber"
+            placeholder="شماره همراه"
+            className="loghme-input-text ltr"
+            value={this.state.phoneNumber}
             onChange={this.handleInputChange}
           />
           <input
             type="password"
             name="password"
             placeholder="رمز عبور"
-            className="loghme-input-text"
+            className="loghme-input-text ltr"
             value={this.state.password}
             onChange={this.handleInputChange}
           />
@@ -83,7 +119,7 @@ class Signup extends React.Component {
             className="loghme-button loghme-button-style"
             onClick={this.handleSubmit}
           >
-            ورود
+            ثبت‌نام
           </button>
           <p>
             قبلا ثبت‌نام کرده‌اید؟{" "}

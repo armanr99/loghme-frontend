@@ -58,10 +58,6 @@
   width: 100%;
 }
 
-.auth input {
-  direction: ltr;
-}
-
 .auth p {
   color: var(--eng-green-color);
   font-size: 0.7em;

@@ -1,5 +1,10 @@
 .header-exit {
   color: var(--pastel-red-color) !important;
+  background: none;
+}
+
+.header-exit:focus {
+  outline: 0;
 }
 
 .header-cart {

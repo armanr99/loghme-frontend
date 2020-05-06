@@ -17,6 +17,7 @@ class HeaderInfo extends React.Component {
 
     this.handleShowCart = this.handleShowCart.bind(this);
     this.handleCloseCart = this.handleCloseCart.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleCloseCart() {
@@ -25,6 +26,12 @@ class HeaderInfo extends React.Component {
 
   handleShowCart() {
     this.setState({ showCart: true });
+  }
+
+  handleLogout(event) {
+    event.preventDefault();
+    localStorage.removeItem("token");
+    window.location.href = "/";
   }
 
   render() {
@@ -40,9 +47,12 @@ class HeaderInfo extends React.Component {
         </Modal>
         <ul>
           <li className="flex-center">
-            <Link to="/exit" className="header-exit flex-center">
+            <button
+              onClick={this.handleLogout}
+              className="loghme-button header-exit flex-center"
+            >
               خروج
-            </Link>
+            </button>
           </li>
           <li className="flex-center">
             <Link to="/profile" className="flex-center">

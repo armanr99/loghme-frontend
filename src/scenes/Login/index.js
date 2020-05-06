@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { error } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
 import logo from "../../assets/images/logo.png";
+import API from "../../services/api";
 import validateEmail from "../../services/tools/validateEmail";
 import "./styles.css";
 
@@ -29,23 +30,40 @@ class Login extends React.Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    
-    const email = this.state.email;
-    const password = this.state.password;
 
-    if (!validateEmail(email)) {
-      toast.error(error.EMAIL);
-      return;
-    } else if (!email || !password) {
+    const data = this.state;
+    const email = data.email;
+    const password = data.password;
+
+    if (!email || !password) {
       toast.error(error.EMPTY_FIELD);
       return;
+    } else if (!validateEmail(email)) {
+      toast.error(error.EMAIL);
+      return;
+    }
+
+    try {
+      const response = await API.post("/login", data);
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      window.location.href = "/";
+    } catch (err) {
+      if (err.response && err.response.status === 403) {
+        toast.error(error.WRONG_LOGIN);
+      } else {
+        toast.error(error.INTERNAL);
+      }
     }
   }
 
   render() {
     return (
       <div className="login-body">
-        <form className="auth flex-center flex-col" onSubmit={this.handleSubmit}>
+        <form
+          className="auth flex-center flex-col"
+          onSubmit={this.handleSubmit}
+        >
           <Link to="/">
             <div className="auth-logo">
               <img src={logo} alt="Logo" />

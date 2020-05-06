@@ -21,23 +21,23 @@ export default function reducer(state = initialState, action) {
     }
     case "ADD_TO_CART_SUCCESS": {
       toast.success(success.ADD_TO_CART);
-      return { user: { ...state.user, cart: action.payload } };
+      return { ...state, user: { ...state.user, cart: action.payload } };
     }
     case "REMOVE_FROM_CART_SUCCESS": {
       toast.success(success.REMOVE_FROM_CART);
-      return { user: { ...state.user, cart: action.payload } };
+      return { ...state, user: { ...state.user, cart: action.payload } };
     }
     case "CHARGE_WALLET_SUCCESS": {
       toast.success(success.CHARGE);
-      return { user: { ...state.user, credit: action.payload } };
-    }
-    case "INTERNAL_ERROR": {
-      toast.error(error.INTERNAL);
-      return state;
+      return { ...state, user: { ...state.user, credit: action.payload } };
     }
     case "FINALIZE_CART_SUCCESS": {
       toast.success(success.FINALIZE_ORDER);
       return { ...state, user: action.payload };
+    }
+    case "INTERNAL_ERROR": {
+      toast.error(error.INTERNAL);
+      return state;
     }
     default: {
       return state;
