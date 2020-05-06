@@ -43,11 +43,16 @@ class Login extends React.Component {
       return;
     }
 
-    const response = await API.post("/login", data);
-    const token = response.data.token;
-
-    localStorage.setItem("token", token);
-    window.location.href = "/";
+    try {
+      const response = await API.post("/login", data);
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      window.location.href = "/";
+    } catch (err) {
+      if (err.response && err.response.status === 403) {
+        toast.error(error.WRONG_LOGIN);
+      }
+    }
   }
 
   render() {

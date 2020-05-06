@@ -4,6 +4,7 @@ export const error = {
   INTERNAL: "خطای داخلی",
   EMAIL: "فرمت ایمیل اشتباه است",
   LEAST_EMPTY_FIELD: "حداقل یکی از فیلد‌های ورودی نیازمند پرشدن است",
+  WRONG_LOGIN: "ایمیل یا رمز عبور وارد‌شده اشتباه است",
 };
 
 export const success = {
