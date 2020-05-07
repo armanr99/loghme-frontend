@@ -14,3 +14,19 @@
   background-color: var(--pastel-red-color) !important;
   color: white !important;
 }
+
+.login-or {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.1px solid var(--eng-green-color);
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+
+.login-or p {
+  font-size: 0.85em;
+  font-weight: bold;
+  padding: 0 !important;
+  margin: 0 !important;
+}

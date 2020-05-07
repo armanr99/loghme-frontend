@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { error } from "../../services/toastify/configs";
 import { toast } from "react-toastify";
+import LoghmeGoogleLogin from "./components/LoghmeGoogleLogin";
 import logo from "../../assets/images/logo.png";
 import API from "../../services/api";
 import validateEmail from "../../services/tools/validateEmail";
 import "./styles.css";
-
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -69,6 +69,10 @@ class Login extends React.Component {
               <img src={logo} alt="Logo" />
             </div>
           </Link>
+          <LoghmeGoogleLogin />
+          <div className="login-or flex-center">
+            <p>یا</p>
+          </div>
           <input
             type="email"
             name="email"
