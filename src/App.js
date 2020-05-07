@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { ToastContainer } from "react-toastify";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import Home from "./scenes/Home";
 import Profile from "./scenes/Profile";
@@ -9,7 +8,7 @@ import Login from "./scenes/Login";
 import Restaurant from "./scenes/Restaurant";
 import DecisionRoute from "./components/DecisionRoute";
 import { setUser } from "./services/redux/actions/userActions";
-import "react-toastify/dist/ReactToastify.css";
+import LoghmeToastContainer from "./components/LoghmeToastContainer";
 
 class App extends React.Component {
   componentDidMount() {
@@ -23,7 +22,7 @@ class App extends React.Component {
     return (
       <Router>
         <div>
-          <ToastContainer rtl />
+          <LoghmeToastContainer />
           <Switch>
             <DecisionRoute
               condition={!isAuthenticated}
