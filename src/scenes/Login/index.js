@@ -77,7 +77,7 @@ class Login extends React.Component {
             type="email"
             name="email"
             placeholder="ایمیل"
-            className="loghme-input-text"
+            className="loghme-input-text ltr"
             value={this.state.email}
             onChange={this.handleInputChange}
           />
@@ -85,7 +85,7 @@ class Login extends React.Component {
             type="password"
             name="password"
             placeholder="رمز عبور"
-            className="loghme-input-text"
+            className="loghme-input-text ltr"
             value={this.state.password}
             onChange={this.handleInputChange}
           />
