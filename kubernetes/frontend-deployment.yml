@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loghme-frontend
+  labels:
+    app: loghme-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loghme-frontend
+  template:
+    metadata:
+      labels:
+        app: loghme-frontend
+    spec:
+      containers:
+      - name: loghme-frontend
+        image: registry.gitlab.com/internet-engineering-spring99/loghme-frontend:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "450m"
+            memory: "50Mi"
+          requests:
+            cpu: "350m"
+            memory: "50Mi"
+      imagePullSecrets:
+      - name: regcred
