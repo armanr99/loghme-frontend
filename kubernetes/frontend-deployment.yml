@@ -15,14 +15,16 @@ spec:
         app: loghme-frontend
     spec:
       containers:
-        - name: loghme-frontend
-          image: registry.gitlab.com/internet-engineering-spring99/loghme-frontend:latest
-          ports:
-            - containerPort: 80
-          resources:
-            limits:
-              cpu: "450m"
-              memory: "400Mi"
-            requests:
-              cpu: "350m"
-              memory: "200Mi"
+      - name: loghme-frontend
+        image: registry.gitlab.com/internet-engineering-spring99/loghme-frontend:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "450m"
+            memory: "400Mi"
+          requests:
+            cpu: "350m"
+            memory: "200Mi"
+     imagePullSecrets:
+     - name: regcred
