@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://loghme-backend-service:8080/",
+  baseURL: "http://185.166.105.6:30000/",
 });
 
 API.interceptors.request.use((requestConfig) => {
