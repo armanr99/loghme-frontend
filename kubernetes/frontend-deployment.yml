@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
         - name: loghme-frontend
+          image: registry.gitlab.com/internet-engineering-spring99/loghme-frontend:latest
           ports:
             - containerPort: 80
           resources:
