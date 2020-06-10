@@ -35,7 +35,7 @@ class LoghmeGoogleLogin extends React.Component {
     return (
       <div className="loghme-google-login">
         <GoogleLogin
-          clientId="1055649283438-ehegliqteop5d72c91otdtpbouiiol3i.apps.googleusercontent.com"
+          clientId="941686033847-nojkfumil3h3p0hv978kbgcrr39htjsq.apps.googleusercontent.com"
           buttonText="ورود با گوگل"
           onSuccess={this.responseGoogleSuccess}
           onFailure={this.responseGoogleError}
