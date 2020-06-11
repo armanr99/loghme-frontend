@@ -18,7 +18,7 @@ class OrderInfo extends React.Component {
     return (
       <div className="order-info flex flex-col align-items-center">
         <div className="order-info-restaurant flex-center">
-          <span>رستوران خامس</span>
+          <span>{this.props.order.cart.items[0].restaurant.name}</span>
         </div>
         <div className="order-info-list">
           <table className="table table-hover table-bordered">
