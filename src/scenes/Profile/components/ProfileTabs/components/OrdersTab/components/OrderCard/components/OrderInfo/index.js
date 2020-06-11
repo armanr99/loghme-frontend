@@ -7,7 +7,7 @@ class OrderInfo extends React.Component {
   render() {
     const cartItems = this.props.order.cart.items;
     const itemRows = cartItems.map((cartItem, index) => (
-      <tr>
+      <tr key={cartItem.food.name}>
         <th scope="row">{convertToPersianDigits(index + 1)}</th>
         <td>{cartItem.food.name}</td>
         <td>{convertToPersianDigits(cartItem.count)}</td>
